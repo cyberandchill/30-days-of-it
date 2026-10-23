@@ -1,4 +1,4 @@
-# Day 01 — Build Active Directory through the GUI
+# Active Directory — Manual Setup Guide
 
 **Goal:** Create a Windows Server domain controller, organize users and groups, and domain-join Windows 11 Pro. These manual instructions use example settings; adjust them to your environment.
 
@@ -57,4 +57,4 @@ Two connected VMs (Windows Server 2022 and Windows 11 Pro), local admin access, 
 
 ![Actual signed-in desktop, private output masked](screenshots/07-domain-desktop-session.png)
 
-**Next:** [Day 02: Hybrid identity](../day-02/GUIDE.md). 
+**Related project:** [Hybrid identity](../day-02/GUIDE.md). 
