@@ -1,6 +1,6 @@
-# Day 01 · Active Directory Lab: Build, Join and Verify
+# Active Directory Lab: Build, Join and Verify
 
-**✓ Verified** · [Build 30 for 30](../../README.md)
+**✓ Verified** · [CyberAndChill Portfolio](../../README.md)
 
 ## What I built
 
