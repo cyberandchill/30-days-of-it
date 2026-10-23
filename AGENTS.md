@@ -18,4 +18,4 @@ Follow `docs/WORKFLOW.md` and `docs/EVIDENCE.md`. Public repository: do not disc
 
 Read relevant day metadata and source records before editing. Preserve existing projects and NOTES.md. Never infer verified outcomes from plans. Do not rerun or alter lab infrastructure just to maintain the portfolio. Review outputs, evidence, secret scans and diff before committing. Push non-forced and verify the published files.
 
-- Choose card aspect ratio to suit the architecture: portrait for multi-relationship diagrams, landscape for simple linear flows. Both display at up to 760px width. Connect each line to the correct node and label the relationship, with no stray or ambiguous lines. Keep large, readable typography, two or three clearly connected architecture nodes, consistent padding, one concise outcome sentence, and a single explore link. No results block or small-print diagrams.
+- All homepage project cards must use the same portrait dimensions (760 × 850), typography, padding and section positions. Fit different architecture types inside the shared template without inconsistent sizes. Keep all arrows anchored to relevant nodes.
