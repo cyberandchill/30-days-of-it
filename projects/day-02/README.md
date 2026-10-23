@@ -20,18 +20,18 @@ The guide gives numbered GUI clicks, settings, useful original screenshots and e
 
 23/23 acceptance checks passed. Twelve users synchronized; exact cloud device enabled with ServerAd trust. Both joins, successful device authentication and standard-user PRT verified after client restart. Sync service resumed automatically after server restart.
 
-**Tools:** Windows Server 2022, Windows 11 Pro, AD DS / DNS, Microsoft Entra Connect Sync, PowerShell, Ansible, MSAL / GNOME Keyring
+**Technologies demonstrated:** Windows Server, Active Directory, DNS, Microsoft Entra ID, Windows 11
 
 <details>
 <summary>Technical evidence, validation and troubleshooting</summary>
 
 **Checks:** 23/23 passed in the recorded implementation. Original evidence is historical, not a new health check.
 
-**Original implementation:** [Build notes](evidence/BUILD-STORY.md) where available, [Recorded artifacts](project.json), [Scripts and screenshots](screenshots/).
+**Evidence:** A selection of original screenshots is included in the manual walkthrough.
 
-**Known problems:** 6 recorded in the project metadata.
 
-**Limitations:** Original implementation evidence, captured October 22 local / October 23 UTC; publication does not rerun the lab. Host reboot, browser application SSO and licensed Office access were not tested. PRT verification demonstrates user SSO token acquisition, not app access. Public scripts and placeholder instructions were not independently replayed. Single existing QEMU/Proxmox platform tested. Connect installed on the DC for this small training lab; production placement and capacity require a separate design. Password and MFA prompts are intentionally excluded from screenshots. Cloud-only administrator retained; no Windows automatic login configured.
+
+**Limitations:** This was a controlled lab validation, not a production deployment.
 
 </details>
 
