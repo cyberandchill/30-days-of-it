@@ -88,6 +88,8 @@ Each day links to its own reproducible walkthrough and original technical eviden
 '''
     result = {ROOT/'README.md': readme}
     for p in projects:
+        if p['status'] != 'verified':
+            continue
         base = ROOT/'projects'/f'day-{p["day"]:02}'
         visual = f'![Implementation result]({p["visual"]})' if p['visual'] else '![Placeholder — no implementation evidence](../../assets/awaiting-evidence.svg)'
         passing = sum(t['result'] == 'pass' for t in p['tests'])
