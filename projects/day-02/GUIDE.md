@@ -1,9 +1,9 @@
-# Day 02 — Connect AD to Microsoft Entra through the GUI
+# Hybrid Identity — Manual Setup Guide
 
 **Goal:** Synchronize selected AD users to Microsoft Entra ID and validate a hybrid-joined Windows 11 Pro device. These are manual instructions using example settings; adjust them to your environment.
 
 ## Prerequisites
-Complete [Day 01](../day-01/GUIDE.md). You need a working AD domain and joined client, an Entra tenant with a **verified domain you own**, a suitable cloud administrator role (such as **Hybrid Identity Administrator**), supported Windows Server resources, and outbound access to Microsoft services. Check current Microsoft Entra Connect Sync requirements first. Preserve an independent cloud-only admin account.
+Complete the [Active Directory lab](../day-01/GUIDE.md). You need a working AD domain and joined client, an Entra tenant with a **verified domain you own**, a suitable cloud administrator role (such as **Hybrid Identity Administrator**), supported Windows Server resources, and outbound access to Microsoft services. Check current Microsoft Entra Connect Sync requirements first. Preserve an independent cloud-only admin account.
 
 ## Step 1 — Confirm the Entra tenant
 1. Sign in to **https://entra.microsoft.com** with the authorized cloud administrator.
