@@ -8,13 +8,9 @@ This portfolio shows the architecture, problems solved, and verified outcomes be
 
 ## Selected projects
 
-### Build 30 for 30
+<a href="projects/day-01/README.md"><img src="assets/day-01-card.svg" alt="Active Directory lab architecture" width="420"></a>
 
-A growing collection of hands-on IT projects. Each build demonstrates a technical use case and a working result.
-
-<a href="projects/day-01/README.md"><img src="assets/day-01-card.svg" alt="Day 01: visual project card" width="420"></a>
-
-<a href="projects/day-02/README.md"><img src="assets/day-02-card.svg" alt="Day 02: visual project card" width="420"></a>
+<a href="projects/day-02/README.md"><img src="assets/day-02-card.svg" alt="Hybrid identity lab architecture" width="420"></a>
 
 ---
 
