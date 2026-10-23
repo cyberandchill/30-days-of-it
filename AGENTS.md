@@ -2,7 +2,9 @@
 
 Follow `docs/WORKFLOW.md` and `docs/EVIDENCE.md`. Public repository: do not disclose credentials, tenants, private hosts, tokens, or sensitive image details. Preserve authentic evidence.
 
-## Build 30 for 30 presentation
+## CyberAndChill technical portfolio presentation
+- The homepage headline is **CyberAndChill | Technical Portfolio**. Present CyberAndChill as a candidate and potential technical service provider. **Build 30 for 30** is a project collection, not the portfolio identity. Do not show a completed-project counter or unfinished-day list. Preserve the concise visual gallery.
+- Include a subtle link teaching readers to make their own portfolio for job applications; do not make the candidate homepage read like a course or sales funnel.
 - Homepage is a clean gallery of clickable architecture cards, not long-form screenshots or logs. Never reference Ship 30 for 30 or another challenge.
 - Each completed project's README must be succinct: what was built, why, visual, prominent **Follow the manual GUI walkthrough** link, key result, expandable technical details.
 - Each completed day needs `GUIDE.md`: self-contained GUI-first numbered steps stating exact navigation, clicks, values/options to enter, prerequisites and expected result. Use the fewest steps needed to reproduce the outcome; do not narrate every agent action. Be accurate about version-dependent paths.
