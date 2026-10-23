@@ -259,8 +259,8 @@
   ],
   "visual": "diagrams/saml-browser-flow.svg",
   "limitations": "Historical October 23, 2026 implementation evidence. Entra GUI procedure and fresh manual bootstrap sequence are derived, not independently replayed. Separate admin/unassigned-user browser tests, replay, rollover, MFA policy changes and reboot behavior remain untested.",
-  "readme_layout": "manual-first",
-  "manual_guide": "GUIDE.md",
+  "readme_layout": "standard",
+  "manual_guide": "MANUAL-SETUP.md",
   "supporting_history": "BUILD-STORY.md",
   "gallery_alt": "Jenkins SAML sign-in architecture",
   "completed_date": "2026-10-23"
