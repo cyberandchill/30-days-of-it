@@ -1,8 +1,8 @@
-# 30 Days of IT · Build. Test. Show.
+# Build 30 for 30
 
-**2/30 verified projects** · Visual proof backed by detailed documentation.
+**2/30 verified projects** · 30 IT builds, documented with visual proof and reproducible GUI walkthroughs.
 
-One clear architecture card per completed project. Click a card for real screenshots, build steps, troubleshooting, scripts and test evidence.
+One architecture card per completed build. Open it for the outcome, a manual step-by-step guide with authentic screenshots, and optional technical evidence.
 
 [Projects](#verified-projects) · [Challenge](docs/WORKFLOW.md) · [Starter](docs/START-HERE.md) · [Evidence](docs/EVIDENCE.md)
 
@@ -46,4 +46,4 @@ One clear architecture card per completed project. Click a card for real screens
 
 </details>
 
-This independent challenge is inspired by Ship 30 for 30; no affiliation. Detailed technical evidence and original screenshots remain in each linked project page.
+Each day links to its own reproducible walkthrough and original technical evidence.
