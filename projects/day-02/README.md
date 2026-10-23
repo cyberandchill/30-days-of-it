@@ -1,6 +1,6 @@
-# Day 02 · Hybrid Identity: AD to Microsoft Entra
+# Hybrid Identity: AD to Microsoft Entra
 
-**✓ Verified** · [Build 30 for 30](../../README.md)
+**✓ Verified** · [CyberAndChill Portfolio](../../README.md)
 
 ## What I built
 
