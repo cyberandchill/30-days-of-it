@@ -4,6 +4,20 @@ Build a local Jenkins application that accepts an existing Microsoft Entra ident
 
 **Recorded result, October 23, 2026:** real browser sign-in succeeded, the signed assertion passed cryptographic and protocol checks, and the ordinary user's administration request returned **403**. A new SAML login also succeeded after restarting Jenkins. This page teaches the equivalent conventional procedure; it does not claim a fresh manual replay.
 
+## Follow the build in five stages
+
+Use the steps below in order. Each stage tells you **where to click**, **what to configure**, **what to expect**, and **how to check it**. The screenshots show actual captured results where available; equivalent GUI actions are identified separately from actions actually performed.
+
+| Stage | What you'll do | Detailed steps |
+|---|---|---|
+| 1. Prepare | Confirm identities, install Java and Jenkins, configure local HTTPS | [1–7](#1-check-the-existing-identity-and-workstation) |
+| 2. Connect Entra | Create the enterprise application and set SAML identifiers | [8–10](#8-create-the-non-gallery-entra-application) |
+| 3. Configure Jenkins | Enter SAML details and apply least-privilege permissions | [11–12](#11-configure-jenkins-saml-realm) |
+| 4. Test | Sign in, confirm user restrictions, and retest after restart | [13–15](#13-perform-the-real-ordinary-user-saml-sign-in) |
+| 5. Review evidence | Distinguish tested results from equivalent manual procedures | [Evidence boundaries](#evidence-boundaries-and-procedure-status) |
+
+**Reading screenshots:** Find each image beside its relevant step. Use the caption to identify the screen and its purpose. When a real screen was not captured, follow the written GUI path and treat that sequence as a documented alternative—not as proof that those clicks were performed.
+
 ## Starting environment, permissions and software
 
 Start with a Windows 11 Pro training computer, a browser and outbound HTTPS access. For the demonstrated hybrid variant, first complete the [Active Directory project](../day-01/GUIDE.md) and [hybrid identity project](../day-02/GUIDE.md). Their prerequisites include an AD domain, DNS, synchronized ordinary user and healthy hybrid-joined client. Those tutorials supply the preceding build; this project does not repeat domain-controller installation.
