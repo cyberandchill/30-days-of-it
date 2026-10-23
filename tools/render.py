@@ -76,10 +76,6 @@ This portfolio shows the architecture, problems solved, and verified outcomes be
 ## Selected projects
 
 {gallery}
-
----
-
-**Building your own portfolio?** [See how to structure a project for your résumé or job applications](docs/START-HERE.md). Show what you built, what problem it solved, and how you verified it.
 '''
     result = {ROOT/'README.md': readme}
     for p in projects:
