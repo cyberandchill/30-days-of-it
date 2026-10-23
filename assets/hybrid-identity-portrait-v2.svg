@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="850" viewBox="0 0 760 850"><style>text{font-family:Arial,Helvetica,sans-serif}.k{font-size:16px;font-weight:700;letter-spacing:.9px;fill:#53715a}.title{font-size:41px;font-weight:700;fill:#183225}.sub{font-size:20px;fill:#4d6554}.node{font-size:25px;font-weight:700;text-anchor:middle;fill:#183a29}.fine{font-size:18px;text-anchor:middle;fill:#597061}.out{font-size:23px;fill:#2c4735}.more{font-size:19px;font-weight:700;fill:#285f3e}.label{font-size:19px;font-weight:700;text-anchor:middle;fill:#476a53}</style>
+<rect width="760" height="850" rx="24" fill="#f9faf7"/>
+<text x="35" y="43" class="k">CYBERANDCHILL / PROJECT</text>
+<path d="M35 63H725" stroke="#d8e0d9" stroke-width="2"/>
+<text x="35" y="127" class="title">Hybrid Identity Integration</text>
+<text x="35" y="169" class="sub">Active Directory · Microsoft Entra · Windows 11</text>
+<rect x="30" y="208" width="700" height="489" rx="20" fill="#e9f1e9"/>
+<!-- Top: two identity systems -->
+<rect x="57" y="272" width="276" height="108" rx="14" fill="white" stroke="#a7bda9" stroke-width="2"/>
+<text x="195" y="318" class="node">Active Directory</text>
+<text x="195" y="350" class="fine">On-premises</text>
+<rect x="427" y="272" width="276" height="108" rx="14" fill="white" stroke="#a7bda9" stroke-width="2"/>
+<text x="565" y="318" class="node">Microsoft Entra</text>
+<text x="565" y="350" class="fine">Cloud identity</text>
+<!-- AD to Entra: directory synchronization only -->
+<path d="M334 324H420" stroke="#527c61" stroke-width="4" fill="none"/>
+<path d="M408 314L420 324L408 334" stroke="#527c61" stroke-width="4" fill="none"/>
+<text x="380" y="299" class="label">Sync</text>
+<!-- Clear separate relationships to the client -->
+<path d="M195 381L286 548" stroke="#527c61" stroke-width="4" fill="none"/>
+<path d="M273 540L286 548L287 533" stroke="#527c61" stroke-width="4" fill="none"/>
+<text x="150" y="464" class="label">Domain joined</text>
+<path d="M565 381L474 548" stroke="#527c61" stroke-width="4" fill="none"/>
+<path d="M473 533L474 548L487 540" stroke="#527c61" stroke-width="4" fill="none"/>
+<text x="610" y="464" class="label">Hybrid joined</text>
+<!-- Shared endpoint -->
+<rect x="231" y="553" width="298" height="105" rx="14" fill="white" stroke="#a7bda9" stroke-width="2"/>
+<text x="380" y="602" class="node">Windows 11</text>
+<text x="380" y="634" class="fine">Hybrid-joined device</text>
+<text x="35" y="751" class="out">Bridges on-premises and cloud identity.</text>
+<path d="M35 787H725" stroke="#d8e0d9" stroke-width="2"/>
+<text x="722" y="825" text-anchor="end" class="more">VIEW PROJECT →</text>
+</svg>

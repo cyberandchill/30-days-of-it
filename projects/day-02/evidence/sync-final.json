@@ -1,0 +1,43 @@
+{
+  "timestamp_utc": "2026-10-23T03:20:48.9557218Z",
+  "scheduler": {
+    "StagingModeEnabled": false,
+    "SyncCycleEnabled": true,
+    "SyncCycleInProgress": false,
+    "SchedulerSuspended": false,
+    "NextSyncCyclePolicyType": 1,
+    "NextSyncCycleStartTimeInUTC": "/Date(1792727396000)/"
+  },
+  "service": [
+    {
+      "Name": "ADSync",
+      "State": "Running",
+      "StartMode": "Auto"
+    }
+  ],
+  "identity_type": "Application",
+  "certificate_present": true,
+  "pending_exports": [
+    {
+      "connector": "cloud",
+      "pending_exports": {
+        "ExportAdds": 0,
+        "ExportUpdates": 0,
+        "ExportDeletes": 0
+      }
+    },
+    {
+      "connector": "AD",
+      "pending_exports": {
+        "ExportAdds": 0,
+        "ExportUpdates": 0,
+        "ExportDeletes": 0
+      }
+    }
+  ],
+  "selected_ou_roles": [
+    "standard departmental users",
+    "owned workstations"
+  ],
+  "running_connectors": 0
+}

@@ -1,0 +1,18 @@
+{
+  "notice": "Public documentation examples only; these are NOT the actual lab addresses, names or logon identifiers. Not executed in this form.",
+  "domain": "training.example.test",
+  "netbios": "TRAINING",
+  "controller_address": "192.0.2.10",
+  "client_address": "192.0.2.20",
+  "prefix_length": 24,
+  "dns_server": "192.0.2.10",
+  "default_gateway": null,
+  "vcpu_per_guest": 2,
+  "memory_gib_per_guest": 4,
+  "virtual_system_disk_gib": 64,
+  "created_users": 14,
+  "security_groups": 5,
+  "created_ous": 10,
+  "privileged_practice_accounts": 2,
+  "user_expiration_policy": "Account and password expiration disabled at owner request; isolated practice lab only."
+}

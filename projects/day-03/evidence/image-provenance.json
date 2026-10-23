@@ -1,0 +1,119 @@
+[
+  {
+    "path": "screenshots/12-saml-provider-settings.png",
+    "captured": "2026-10-23T14:59:46Z",
+    "source": "Native guest console capture; original retained privately",
+    "original_sha256": "74a57bc214fa07396d56eb7363c8d8c6e80216b2fddf0b441120c3c82cb56690",
+    "sha256": "2468d901ec73bd854c6bdf883baac3a3d571b0e9dc4f862219598f433dc941cf",
+    "mask_rectangles": [
+      [
+        155,
+        490,
+        1128,
+        525
+      ]
+    ],
+    "processing": "Black REDACTED blocks remove private identifiers; surrounding source pixels are preserved.",
+    "public_reviewed": true
+  },
+  {
+    "path": "screenshots/13-service-provider-identifier.png",
+    "captured": "2026-10-23T15:01:24Z",
+    "source": "Native guest console capture; original retained privately",
+    "original_sha256": "e917079459e02211e2f3249c183b4bd7ff906be5b05677d0c2e425a0ad2e5aa9",
+    "sha256": "2d41a3907c247cf626c9dd0bde75b68f576d0b3728a5692f42613385fc0d4082",
+    "mask_rectangles": [
+      [
+        189,
+        446,
+        510,
+        476
+      ]
+    ],
+    "processing": "Black REDACTED blocks remove private identifiers; surrounding source pixels are preserved.",
+    "public_reviewed": true
+  },
+  {
+    "path": "screenshots/14-signed-assertion-required.png",
+    "captured": "2026-10-23T15:01:54Z",
+    "source": "Native guest console capture; original retained privately",
+    "original_sha256": "5fa69b877f7c998242f780e143dea30573becdb60e2b69eecc1f6963411d2172",
+    "sha256": "cf4956600af9f03c48a63e7b6a91642018d464dfdaf6128f46d3aa7ca19fabdf",
+    "mask_rectangles": [],
+    "processing": "Unmodified native browser screenshot; PNG encoding only.",
+    "public_reviewed": true
+  },
+  {
+    "path": "screenshots/15-application-permission-matrix.png",
+    "captured": "2026-10-23T15:01:10Z",
+    "source": "Native guest console capture; original retained privately",
+    "original_sha256": "2fd5ebd49e99e2e0615dfced5fb04e87837ab1c406f08617819b8c55111117d6",
+    "sha256": "14e0defddc47dc6941507c178639fb69da5a7bcd80c8b77cd354c3b232531bb3",
+    "mask_rectangles": [
+      [
+        184,
+        183,
+        399,
+        211
+      ]
+    ],
+    "processing": "Black REDACTED blocks remove private identifiers; surrounding source pixels are preserved.",
+    "public_reviewed": true
+  },
+  {
+    "path": "screenshots/22-saml-user-profile.png",
+    "captured": "2026-10-23T15:07:56Z",
+    "source": "Native Microsoft Edge page screenshot through browser screenshot API; original retained privately",
+    "original_sha256": "a6ea2ca2db5bb982e1f34573f0040a7eff90274c4a00014fe33234f358a344ee",
+    "sha256": "93cd218a3639a40b3f16a8df1cfd6cf11517ccacd349087a2dd54097115c11a0",
+    "mask_rectangles": [
+      [
+        162,
+        19,
+        349,
+        46
+      ],
+      [
+        67,
+        73,
+        456,
+        105
+      ],
+      [
+        431,
+        124,
+        650,
+        151
+      ]
+    ],
+    "processing": "Black REDACTED blocks remove private identifiers; surrounding source pixels are preserved.",
+    "public_reviewed": true
+  },
+  {
+    "path": "screenshots/23-standard-user-admin-denied.png",
+    "captured": "2026-10-23T15:08:26Z",
+    "source": "Native Microsoft Edge page screenshot through browser screenshot API; original retained privately",
+    "original_sha256": "73af833d9194cf925176c7a6d5fb9af70ccf5fdbf85c024b920960b66136a719",
+    "sha256": "b2e3b766e68a2683443e5776f2b65c7b48fe220e15727f1d54fcd11c670bfb1e",
+    "mask_rectangles": [
+      [
+        392,
+        119,
+        614,
+        145
+      ]
+    ],
+    "processing": "Black REDACTED blocks remove private identifiers; surrounding source pixels are preserved.",
+    "public_reviewed": true
+  },
+  {
+    "path": "screenshots/24-post-restart-dashboard.png",
+    "captured": "2026-10-23T15:10:56Z",
+    "source": "Native Microsoft Edge page screenshot through browser screenshot API; original retained privately",
+    "original_sha256": "f97d0628aee2eaa18523875075e5c4bd2e9e5c91098d93b62a047c93cb01a2fb",
+    "sha256": "ac96195d1a9b2b557e3df451eadae1d83b2139778d357e01e1b956ff0f5dd59e",
+    "mask_rectangles": [],
+    "processing": "Unmodified native browser screenshot; PNG encoding only.",
+    "public_reviewed": true
+  }
+]

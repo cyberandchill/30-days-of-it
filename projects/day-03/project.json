@@ -1,0 +1,267 @@
+{
+  "day": 3,
+  "title": "Jenkins SAML Single Sign-On with Microsoft Entra",
+  "status": "verified",
+  "built": "Integrated an open-source Jenkins application with existing Entra identities through SAML 2.0.",
+  "problem": "Reuse a synchronized identity for application sign-in while keeping application administration separate from ordinary access.",
+  "technologies": [
+    "Jenkins",
+    "Microsoft Entra ID",
+    "SAML 2.0",
+    "Windows 11",
+    "Java",
+    "HTTPS"
+  ],
+  "skills": [
+    "Federation",
+    "Claims mapping",
+    "Assertion validation",
+    "Application authorization",
+    "Certificate trust",
+    "GUI documentation"
+  ],
+  "objective": "Demonstrate a real SAML browser flow, assertion validation and least-privilege Jenkins access.",
+  "outcome": "Ordinary-user SAML login and post-restart login succeeded; administration was denied with HTTP 403.",
+  "steps": [
+    "Follow the complete [manual GUI walkthrough](GUIDE.md).",
+    "Inspect the [sanitized build history](BUILD-STORY.md) and original measured application outcomes."
+  ],
+  "tests": [
+    {
+      "check": "request redirect observed",
+      "expected": "True",
+      "observed": "True",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "request acs matches",
+      "expected": "True",
+      "observed": "True",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "request issuer matches",
+      "expected": "True",
+      "observed": "True",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "response post observed",
+      "expected": "True",
+      "observed": "True",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "response success",
+      "expected": "True",
+      "observed": "True",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "response destination matches",
+      "expected": "True",
+      "observed": "True",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "request response correlated",
+      "expected": "True",
+      "observed": "True",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "assertion audience matches",
+      "expected": "True",
+      "observed": "True",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "assertion issuer matches",
+      "expected": "True",
+      "observed": "True",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "assertion time window valid",
+      "expected": "True",
+      "observed": "True",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "assertion signature present",
+      "expected": "True",
+      "observed": "True",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "assertion signature cryptographically valid",
+      "expected": "True",
+      "observed": "True",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "signed username claim matches",
+      "expected": "True",
+      "observed": "True",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "expected ordinary application identity",
+      "expected": "True",
+      "observed": "True",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "ordinary-user administration HTTP",
+      "expected": "403",
+      "observed": "403",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "anonymous protected API HTTP",
+      "expected": "403",
+      "observed": "403",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "unsigned unsolicited response leaves session anonymous",
+      "expected": "True",
+      "observed": "True",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "SAML login after Jenkins restart",
+      "expected": "True",
+      "observed": "True",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    }
+  ],
+  "problems": [
+    "Matched the application template role rather than an unsupported generic assignment.",
+    "Mapped the signed username claim separately from opaque NameID.",
+    "Checked anonymous status and effective permissions rather than relying on the authenticated token flag."
+  ],
+  "evidence": [
+    {
+      "path": "screenshots/12-saml-provider-settings.png",
+      "caption": "Authentic Jenkins GUI capture; conspicuous privacy masks preserve the observed settings/result.",
+      "source": "Native guest console capture; original retained privately",
+      "captured": "2026-10-23T14:59:46Z",
+      "sha256": "2468d901ec73bd854c6bdf883baac3a3d571b0e9dc4f862219598f433dc941cf",
+      "public_reviewed": true
+    },
+    {
+      "path": "screenshots/13-service-provider-identifier.png",
+      "caption": "Authentic Jenkins GUI capture; conspicuous privacy masks preserve the observed settings/result.",
+      "source": "Native guest console capture; original retained privately",
+      "captured": "2026-10-23T15:01:24Z",
+      "sha256": "2d41a3907c247cf626c9dd0bde75b68f576d0b3728a5692f42613385fc0d4082",
+      "public_reviewed": true
+    },
+    {
+      "path": "screenshots/14-signed-assertion-required.png",
+      "caption": "Authentic Jenkins GUI capture; conspicuous privacy masks preserve the observed settings/result.",
+      "source": "Native guest console capture; original retained privately",
+      "captured": "2026-10-23T15:01:54Z",
+      "sha256": "cf4956600af9f03c48a63e7b6a91642018d464dfdaf6128f46d3aa7ca19fabdf",
+      "public_reviewed": true
+    },
+    {
+      "path": "screenshots/15-application-permission-matrix.png",
+      "caption": "Authentic Jenkins GUI capture; conspicuous privacy masks preserve the observed settings/result.",
+      "source": "Native guest console capture; original retained privately",
+      "captured": "2026-10-23T15:01:10Z",
+      "sha256": "14e0defddc47dc6941507c178639fb69da5a7bcd80c8b77cd354c3b232531bb3",
+      "public_reviewed": true
+    },
+    {
+      "path": "screenshots/22-saml-user-profile.png",
+      "caption": "Authentic Jenkins GUI capture; conspicuous privacy masks preserve the observed settings/result.",
+      "source": "Native Microsoft Edge page screenshot through browser screenshot API; original retained privately",
+      "captured": "2026-10-23T15:07:56Z",
+      "sha256": "93cd218a3639a40b3f16a8df1cfd6cf11517ccacd349087a2dd54097115c11a0",
+      "public_reviewed": true
+    },
+    {
+      "path": "screenshots/23-standard-user-admin-denied.png",
+      "caption": "Authentic Jenkins GUI capture; conspicuous privacy masks preserve the observed settings/result.",
+      "source": "Native Microsoft Edge page screenshot through browser screenshot API; original retained privately",
+      "captured": "2026-10-23T15:08:26Z",
+      "sha256": "b2e3b766e68a2683443e5776f2b65c7b48fe220e15727f1d54fcd11c670bfb1e",
+      "public_reviewed": true
+    },
+    {
+      "path": "screenshots/24-post-restart-dashboard.png",
+      "caption": "Authentic Jenkins GUI capture; conspicuous privacy masks preserve the observed settings/result.",
+      "source": "Native Microsoft Edge page screenshot through browser screenshot API; original retained privately",
+      "captured": "2026-10-23T15:10:56Z",
+      "sha256": "ac96195d1a9b2b557e3df451eadae1d83b2139778d357e01e1b956ff0f5dd59e",
+      "public_reviewed": true
+    },
+    {
+      "path": "evidence/image-provenance.json",
+      "caption": "Original/copy identity and exact privacy-mask coordinates; originals retained privately.",
+      "source": "Reviewed source-derived provenance; no generated UI.",
+      "captured": "2026-10-23",
+      "sha256": "e39a29d5c687da78c175f91daec7fc8ccb3bb6ee8e30fdb4797101ef896b000b",
+      "public_reviewed": true
+    },
+    {
+      "path": "evidence/measured-results.json",
+      "caption": "Allowlisted actual protocol/application outcomes; no assertion, cookie or identifier values.",
+      "source": "Preserved original validation, selected and privacy-reviewed for this project.",
+      "captured": "2026-10-23T15:09:37.7857863Z",
+      "sha256": "2b647db8a41daa945aaaaa19d8180ed89f6b4bca84cddee0e2237bc4f6941a6e",
+      "public_reviewed": true
+    },
+    {
+      "path": "GUIDE.md",
+      "caption": "Conventional GUI-first reproduction guide with tested/derived status.",
+      "source": "Written from working configuration, authentic screenshots and official product documentation; fresh manual replay not performed.",
+      "captured": "2026-10-23",
+      "sha256": "1412eb2e5a33f965342e84c90f8245713e34303949560ce8966961aa30c083ed",
+      "public_reviewed": true
+    },
+    {
+      "path": "BUILD-STORY.md",
+      "caption": "Sanitized technical chronology, troubleshooting, results and limitations.",
+      "source": "Nonproprietary account of the recorded implementation; private operational details excluded.",
+      "captured": "2026-10-23",
+      "sha256": "cb56c0aad2d8759e53f6e1fc9978ad50ff71da90b0d37a0c102419910b77ed78",
+      "public_reviewed": true
+    },
+    {
+      "path": "diagrams/saml-browser-flow.svg",
+      "caption": "Conceptual browser-mediated SAML sequence, not execution evidence.",
+      "source": "Explanatory SVG derived from the demonstrated architecture.",
+      "captured": "2026-10-23",
+      "sha256": "39bc78f187677ef85a03eb7d637603a734b3f65786cb719dfd8dde8deb489f75",
+      "public_reviewed": true
+    }
+  ],
+  "visual": "diagrams/saml-browser-flow.svg",
+  "limitations": "Historical October 23, 2026 implementation evidence. Entra GUI procedure and fresh manual bootstrap sequence are derived, not independently replayed. Separate admin/unassigned-user browser tests, replay, rollover, MFA policy changes and reboot behavior remain untested.",
+  "readme_layout": "manual-first",
+  "manual_guide": "GUIDE.md",
+  "supporting_history": "BUILD-STORY.md",
+  "gallery_alt": "Jenkins SAML sign-in architecture",
+  "completed_date": "2026-10-23"
+}

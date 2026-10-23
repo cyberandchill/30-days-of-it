@@ -1,0 +1,402 @@
+[
+  {
+    "path": "screenshots/02-dc-network-adapters.png",
+    "source_sha256": "44f5b9c7ecc92f31ed3afa6980fa368af83a299f70f61b363c330277725d1995",
+    "public_sha256": "347256b36d742d5f50ea21a820c5ebd7504a97c8a69585c94748f48497a438ff",
+    "capture_date": "2026-10-22 America/New_York (session crossed UTC midnight)",
+    "processing": "Lossless crop and opaque privacy masks only; no generated result text.",
+    "crop_original_pixels": [
+      0,
+      0,
+      1280,
+      755
+    ],
+    "redaction_rectangles_original_pixels": [
+      [
+        65,
+        172,
+        148,
+        190
+      ],
+      [
+        327,
+        218,
+        429,
+        236
+      ],
+      [
+        581,
+        218,
+        683,
+        236
+      ],
+      [
+        0,
+        90,
+        260,
+        425
+      ],
+      [
+        265,
+        228,
+        430,
+        254
+      ],
+      [
+        520,
+        228,
+        690,
+        254
+      ]
+    ]
+  },
+  {
+    "path": "screenshots/03-connect-welcome.png",
+    "source_sha256": "7b78f6a6ad5e3205b9de97eee5021c06c675a710d1dedb7c611eeb7437b22a60",
+    "public_sha256": "aa822280fe0f8f2c303e8d6460e01228809cb170709325e5789240193062bd10",
+    "capture_date": "2026-10-22 America/New_York (session crossed UTC midnight)",
+    "processing": "Lossless crop and opaque privacy masks only; no generated result text.",
+    "crop_original_pixels": [
+      0,
+      0,
+      1280,
+      755
+    ],
+    "redaction_rectangles_original_pixels": []
+  },
+  {
+    "path": "screenshots/04-connect-installation-choice.png",
+    "source_sha256": "eb979e733916676679de0d1dcf20347a80e11ee51e61e389e58d2267efb83a7f",
+    "public_sha256": "4daf03e812b271e485d50d4012b046e14289b064018e6ab25323110309ccb928",
+    "capture_date": "2026-10-22 America/New_York (session crossed UTC midnight)",
+    "processing": "Lossless crop and opaque privacy masks only; no generated result text.",
+    "crop_original_pixels": [
+      0,
+      0,
+      1280,
+      755
+    ],
+    "redaction_rectangles_original_pixels": [
+      [
+        827,
+        139,
+        902,
+        154
+      ],
+      [
+        405,
+        199,
+        515,
+        221
+      ]
+    ]
+  },
+  {
+    "path": "screenshots/05-connect-required-components.png",
+    "source_sha256": "326555807a8509304fa8ec583d7bc403ae94ca54af86c571efd0eb1ecaba7b72",
+    "public_sha256": "c16af9a5437182bd4898a772976403e4ee2c5e3c20d607b6d2826e6e39a6f02e",
+    "capture_date": "2026-10-22 America/New_York (session crossed UTC midnight)",
+    "processing": "Lossless crop and opaque privacy masks only; no generated result text.",
+    "crop_original_pixels": [
+      0,
+      0,
+      1280,
+      755
+    ],
+    "redaction_rectangles_original_pixels": []
+  },
+  {
+    "path": "screenshots/10-connect-password-hash-sync.png",
+    "source_sha256": "bf1e9237354ccba90480e97ccea3f7e8873bffb450deaa068b4dc8819d6c6007",
+    "public_sha256": "f14ceef33e3dfa9f4e63aae39cfc6cb3ddebcb0d521bafd02d4e44acf4563a76",
+    "capture_date": "2026-10-22 America/New_York (session crossed UTC midnight)",
+    "processing": "Lossless crop and opaque privacy masks only; no generated result text.",
+    "crop_original_pixels": [
+      26,
+      26,
+      906,
+      646
+    ],
+    "redaction_rectangles_original_pixels": []
+  },
+  {
+    "path": "screenshots/11-connect-tenant-account.png",
+    "source_sha256": "421198845718124de515b6c5464ddca8e361ee0b8ac971c2c246a98927451d56",
+    "public_sha256": "65bf0c6804318087c87af9720a9cd487eef276cdfbca65045c958cfb69c6a8d3",
+    "capture_date": "2026-10-22 America/New_York (session crossed UTC midnight)",
+    "processing": "Lossless crop and opaque privacy masks only; no generated result text.",
+    "crop_original_pixels": [
+      26,
+      26,
+      906,
+      646
+    ],
+    "redaction_rectangles_original_pixels": [
+      [
+        257,
+        210,
+        374,
+        228
+      ],
+      [
+        250,
+        195,
+        570,
+        223
+      ]
+    ]
+  },
+  {
+    "path": "screenshots/14-connect-ad-service-account.png",
+    "source_sha256": "8328280d8e0b0b483cd3fc0f9646472745610beacd843b206943a9a80623a343",
+    "public_sha256": "9b93b28b17452d96975610282c5b0e658f807f5cf8b6d096ab0b866947a8a1e3",
+    "capture_date": "2026-10-22 America/New_York (session crossed UTC midnight)",
+    "processing": "Lossless crop and opaque privacy masks only; no generated result text.",
+    "crop_original_pixels": [
+      26,
+      26,
+      906,
+      646
+    ],
+    "redaction_rectangles_original_pixels": []
+  },
+  {
+    "path": "screenshots/16-connect-verified-upn.png",
+    "source_sha256": "6c5215f7181dff901f3cd5fee016b0b14a780d4e00621e699314b538ce3ebc8a",
+    "public_sha256": "268e704cdf788ad1880b52c54d105e39a99bd6d00de84d1c0bfab87cda5446be",
+    "capture_date": "2026-10-22 America/New_York (session crossed UTC midnight)",
+    "processing": "Lossless crop and opaque privacy masks only; no generated result text.",
+    "crop_original_pixels": [
+      26,
+      26,
+      906,
+      646
+    ],
+    "redaction_rectangles_original_pixels": [
+      [
+        260,
+        237,
+        367,
+        256
+      ],
+      [
+        255,
+        240,
+        465,
+        266
+      ]
+    ]
+  },
+  {
+    "path": "screenshots/17-connect-ou-filtering.png",
+    "source_sha256": "b66bff0679aa3a10eb033cbd5ab9224b791802a47ec0b0b4cddc877cdf053761",
+    "public_sha256": "bc0105b21c98d0810fb45ec95adb651e648003e275fb2aa91e67572e3821bab7",
+    "capture_date": "2026-10-22 America/New_York (session crossed UTC midnight)",
+    "processing": "Lossless crop and opaque privacy masks only; no generated result text.",
+    "crop_original_pixels": [
+      26,
+      26,
+      906,
+      646
+    ],
+    "redaction_rectangles_original_pixels": [
+      [
+        319,
+        139,
+        434,
+        158
+      ],
+      [
+        320,
+        218,
+        427,
+        237
+      ],
+      [
+        339,
+        269,
+        425,
+        288
+      ],
+      [
+        315,
+        133,
+        520,
+        159
+      ],
+      [
+        320,
+        215,
+        475,
+        236
+      ],
+      [
+        340,
+        266,
+        475,
+        288
+      ]
+    ]
+  },
+  {
+    "path": "screenshots/18-connect-source-anchor.png",
+    "source_sha256": "78cb67fe3fef8d48f33b242750f56704bca27cf96b8e0c19c8a4fda43c66e31f",
+    "public_sha256": "e9b2654416331e2a86fae023b70041a811d1905840c8a7b0978335d5b06bc150",
+    "capture_date": "2026-10-22 America/New_York (session crossed UTC midnight)",
+    "processing": "Lossless crop and opaque privacy masks only; no generated result text.",
+    "crop_original_pixels": [
+      26,
+      26,
+      906,
+      646
+    ],
+    "redaction_rectangles_original_pixels": []
+  },
+  {
+    "path": "screenshots/20-connect-optional-features.png",
+    "source_sha256": "e3112189098ec906a35c7b4518300c3bb309cb5dbc51c26222a0d2c184d97ff0",
+    "public_sha256": "ed5779490dd47890421241dfbbfbdb7adeccce66ff90e27867736c046028b636",
+    "capture_date": "2026-10-22 America/New_York (session crossed UTC midnight)",
+    "processing": "Lossless crop and opaque privacy masks only; no generated result text.",
+    "crop_original_pixels": [
+      26,
+      26,
+      906,
+      646
+    ],
+    "redaction_rectangles_original_pixels": []
+  },
+  {
+    "path": "screenshots/21-connect-ready-review.png",
+    "source_sha256": "3019c48c3b5180215d755a4542dbcb528705b290da51837bf291b96378459bde",
+    "public_sha256": "9680a2fe346558c9ab22911b42c42c623f6fda8f0fd42a328e0977920061152f",
+    "capture_date": "2026-10-22 America/New_York (session crossed UTC midnight)",
+    "processing": "Lossless crop and opaque privacy masks only; no generated result text.",
+    "crop_original_pixels": [
+      26,
+      26,
+      906,
+      646
+    ],
+    "redaction_rectangles_original_pixels": [
+      [
+        349,
+        209,
+        560,
+        228
+      ],
+      [
+        349,
+        232,
+        457,
+        251
+      ],
+      [
+        386,
+        196,
+        780,
+        244
+      ]
+    ]
+  },
+  {
+    "path": "screenshots/27-connect-staging-switch.png",
+    "source_sha256": "281ca8e813616aa3e91ddcd2bbf881e3424a990c56b45d307fe23bca8f6591f1",
+    "public_sha256": "c2d7d2ac54d32eb0c0c8009c996925141e67c3f844ac2d4dd9fd5f725383da92",
+    "capture_date": "2026-10-22 America/New_York (session crossed UTC midnight)",
+    "processing": "Lossless crop and opaque privacy masks only; no generated result text.",
+    "crop_original_pixels": [
+      0,
+      0,
+      1280,
+      755
+    ],
+    "redaction_rectangles_original_pixels": []
+  },
+  {
+    "path": "screenshots/29-connect-active-complete.png",
+    "source_sha256": "ce4f01ca52af70fd7ccbb6e4511691091f72d863a9e1bb287e97b7e3d6d9fa39",
+    "public_sha256": "87b208f18e5233de3dccc2a8fe51eaa4a20332eb3ae69d9db4908af752248e95",
+    "capture_date": "2026-10-22 America/New_York (session crossed UTC midnight)",
+    "processing": "Lossless crop and opaque privacy masks only; no generated result text.",
+    "crop_original_pixels": [
+      0,
+      0,
+      1280,
+      755
+    ],
+    "redaction_rectangles_original_pixels": []
+  },
+  {
+    "path": "screenshots/30-client-standard-signin.png",
+    "source_sha256": "e69465ef096ecf0da942d08cae62988e61e119aa01933f87ebfae6050a3446a2",
+    "public_sha256": "714fe7b7375dea05524e2e376645473492d975d5f39740a03194ae54427c5173",
+    "capture_date": "2026-10-22 America/New_York (session crossed UTC midnight)",
+    "processing": "Lossless crop and opaque privacy masks only; no generated result text.",
+    "crop_original_pixels": [
+      0,
+      0,
+      1280,
+      755
+    ],
+    "redaction_rectangles_original_pixels": [
+      [
+        614,
+        542,
+        730,
+        562
+      ],
+      [
+        0,
+        640,
+        320,
+        790
+      ],
+      [
+        480,
+        435,
+        790,
+        485
+      ],
+      [
+        450,
+        515,
+        840,
+        560
+      ]
+    ]
+  },
+  {
+    "path": "screenshots/32-client-hybrid-prt-proof.png",
+    "source_sha256": "a341df785a87adfe0fc9c209036e180f2ad20aa9811cf7da462e1adbe89599b2",
+    "public_sha256": "31692f6f25a339a968ae835eeb9323b8a84f24886565b0acbb59f43ba3192267",
+    "capture_date": "2026-10-22 America/New_York (session crossed UTC midnight)",
+    "processing": "Lossless crop and opaque privacy masks only; no generated result text.",
+    "crop_original_pixels": [
+      135,
+      160,
+      660,
+      280
+    ],
+    "redaction_rectangles_original_pixels": [
+      [
+        32,
+        93,
+        234,
+        116
+      ],
+      [
+        59,
+        112,
+        253,
+        135
+      ],
+      [
+        188,
+        133,
+        196,
+        144
+      ]
+    ]
+  }
+]

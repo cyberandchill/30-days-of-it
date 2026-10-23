@@ -1,0 +1,19 @@
+{
+  "device_and_sso_state": {
+    "OnPremTgt": "NO",
+    "DomainJoined": "YES",
+    "CloudTgt": "YES",
+    "DeviceAuthStatus": "SUCCESS",
+    "NgcSet": "NO",
+    "AzureAdJoined": "YES",
+    "WamDefaultSet": "YES",
+    "AzureAdPrt": "YES"
+  },
+  "secret_material_exported": false,
+  "system_context": false,
+  "client_boot_utc": "2026-10-23T03:14:06.5000000Z",
+  "expected_tenant_matches": true,
+  "execution_context": "interactive-standard-domain-user",
+  "timestamp_utc": "2026-10-23T03:20:49.2247379Z",
+  "elevated_administrator_token": false
+}

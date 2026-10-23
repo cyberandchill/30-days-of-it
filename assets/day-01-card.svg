@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="850" viewBox="0 0 760 850"><style>text{font-family:Arial,Helvetica,sans-serif}.k{font-size:16px;font-weight:700;letter-spacing:.9px;fill:#53715a}.title{font-size:41px;font-weight:700;fill:#183225}.sub{font-size:20px;fill:#4d6554}.node{font-size:25px;font-weight:700;text-anchor:middle;fill:#183a29}.fine{font-size:18px;text-anchor:middle;fill:#597061}.out{font-size:23px;fill:#2c4735}.more{font-size:19px;font-weight:700;fill:#285f3e}.label{font-size:19px;font-weight:700;text-anchor:middle;fill:#476a53}</style>
+<rect width="760" height="850" rx="24" fill="#f9faf7"/>
+<text x="35" y="43" class="k">CYBERANDCHILL / PROJECT</text><path d="M35 63H725" stroke="#d8e0d9" stroke-width="2"/>
+<text x="35" y="127" class="title">Active Directory Infrastructure</text>
+<text x="35" y="169" class="sub">Windows Server · Active Directory · DNS</text>
+<rect x="30" y="208" width="700" height="489" rx="20" fill="#e9f1e9"/>
+<rect x="184" y="268" width="392" height="115" rx="14" fill="white" stroke="#a7bda9" stroke-width="2"/>
+<text x="380" y="315" class="node">Domain Controller</text><text x="380" y="350" class="fine">AD DS · DNS · Users and groups</text>
+<path d="M380 384V494" fill="none" stroke="#527c61" stroke-width="4"/>
+<path d="M368 480L380 495L392 480" fill="none" stroke="#527c61" stroke-width="4"/>
+<text x="467" y="450" class="label">Domain join</text>
+<rect x="184" y="500" width="392" height="115" rx="14" fill="white" stroke="#a7bda9" stroke-width="2"/>
+<text x="380" y="548" class="node">Windows 11</text><text x="380" y="582" class="fine">Domain-joined workstation</text>
+<text x="35" y="751" class="out">Centralized sign-in and workstation access.</text>
+<path d="M35 787H725" stroke="#d8e0d9" stroke-width="2"/>
+<text x="722" y="825" text-anchor="end" class="more">VIEW PROJECT →</text></svg>
