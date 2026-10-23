@@ -52,7 +52,8 @@ def card(p):
     day = p['day']
     prefix = f'projects/day-{day:02}'
     if p['status'] == 'verified':
-        return (f'<a href="{prefix}/README.md"><img src="{("assets/hybrid-identity-portrait-v2.svg" if day == 2 else f"assets/day-{day:02}-card.svg")}" '
+        asset = 'assets/hybrid-identity-portrait-v2.svg' if day == 2 else f'assets/day-{day:02}-card.svg'
+        return (f'<a href="{prefix}/README.md"><img src="{asset}" '
                 f'alt="{esc(p["title"])} architecture card" width="760"></a>')
     return f'- [Day {day:02}: {esc(p["title"])} — {STATUSES[p["status"]]}]({prefix}/README.md)'
 
