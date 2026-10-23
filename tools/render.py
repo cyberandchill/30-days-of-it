@@ -53,7 +53,7 @@ def card(p):
     prefix = f'projects/day-{day:02}'
     if p['status'] == 'verified':
         return (f'<a href="{prefix}/README.md"><img src="assets/day-{day:02}-card.svg" '
-                f'alt="Day {day:02}: visual project card" width="420"></a>')
+                f'alt="{esc(p["title"])} architecture card" width="420"></a>')
     return f'- [Day {day:02}: {esc(p["title"])} — {STATUSES[p["status"]]}]({prefix}/README.md)'
 
 def bullets(items, empty):
@@ -74,10 +74,6 @@ I build and validate practical IT environments that demonstrate how enterprise t
 This portfolio shows the architecture, problems solved, and verified outcomes behind each project. Open a project to explore its results, screenshots, and a step-by-step manual walkthrough.
 
 ## Selected projects
-
-### Build 30 for 30
-
-A growing collection of hands-on IT projects. Each build demonstrates a technical use case and a working result.
 
 {gallery}
 
@@ -110,7 +106,7 @@ A growing collection of hands-on IT projects. Each build demonstrates a technica
 </details>"""
         text = f"""# Day {p['day']:02} · {p['title']}
 
-**{STATUSES[p['status']]}** · [Build 30 for 30](../../README.md)
+**{STATUSES[p['status']]}** · [CyberAndChill Portfolio](../../README.md)
 
 ## What I built
 
