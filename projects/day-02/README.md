@@ -1,104 +1,38 @@
 # Day 02 · Hybrid Identity: AD to Microsoft Entra
 
-**✓ Verified** · [All projects](../../README.md)
+**✓ Verified** · [Build 30 for 30](../../README.md)
 
-## Objective and use case
-
-Synchronize the twelve standard departmental users and the owned workstation, verify hybrid join and real-user PRT, and document protected access persistence.
-
-**Problem:** Connect on-premises identities to a cloud directory while preserving administrator separation and service access after guest restarts.
-
-## Built and outcome
+## What I built
 
 Extended an existing AD lab with scoped directory synchronization and Windows 11 hybrid join.
 
+**Why it matters:** Connect on-premises identities to a cloud directory while preserving administrator separation and service access after guest restarts.
+
+![Architecture](screenshots/32-client-hybrid-prt-proof.png)
+
+## Rebuild it yourself
+
+[**Follow the manual GUI walkthrough →**](GUIDE.md)
+
+The guide gives numbered GUI clicks, settings, useful original screenshots and expected results. Automation and audit records are optional.
+
+## Result
+
 23/23 acceptance checks passed. Twelve users synchronized; exact cloud device enabled with ServerAd trust. Both joins, successful device authentication and standard-user PRT verified after client restart. Sync service resumed automatically after server restart.
 
-![Implementation result](screenshots/32-client-hybrid-prt-proof.png)
+**Tools:** Windows Server 2022, Windows 11 Pro, AD DS / DNS, Microsoft Entra Connect Sync, PowerShell, Ansible, MSAL / GNOME Keyring
 
-## Environment and skills
+<details>
+<summary>Technical evidence, validation and troubleshooting</summary>
 
-**Technologies:** Windows Server 2022, Windows 11 Pro, AD DS / DNS, Microsoft Entra Connect Sync, PowerShell, Ansible, MSAL / GNOME Keyring
+**Checks:** 23/23 passed in the recorded implementation. Original evidence is historical, not a new health check.
 
-**Skills demonstrated:** Hybrid identity, OU-scoped synchronization, Device registration, PRT verification, DNS troubleshooting, Evidence review
+**Original implementation:** [Build notes](evidence/BUILD-STORY.md) where available, [Recorded artifacts](project.json), [Scripts and screenshots](screenshots/).
 
-## Implementation
+**Known problems:** 6 recorded in the project metadata.
 
-- Read the [chronological build story](evidence/BUILD-STORY.md) for the complete implementation and troubleshooting sequence.
-- Follow the [illustrated manual reproduction walkthrough](evidence/MANUAL.md), including installation, OU filtering, staging, SCP discovery, activation and verification.
-- Review [protected access and persistence](evidence/PERSISTENT-ACCESS.md); human authentication, the delegated cache and the sync service identity are separate.
+**Limitations:** Original implementation evidence, captured October 22 local / October 23 UTC; publication does not rerun the lab. Host reboot, browser application SSO and licensed Office access were not tested. PRT verification demonstrates user SSO token acquisition, not app access. Public scripts and placeholder instructions were not independently replayed. Single existing QEMU/Proxmox platform tested. Connect installed on the DC for this small training lab; production placement and capacity require a separate design. Password and MFA prompts are intentionally excluded from screenshots. Cloud-only administrator retained; no Windows automatic login configured.
 
-Architecture diagrams, when applicable, belong in `diagrams/`. Actual screenshots belong in `screenshots/`; sanitized configuration examples in `configs/`; reusable code in `scripts/`. Link each used artifact in the evidence list. Unused folders are intentional.
+</details>
 
-## Validation
-
-- both owned guests running: expected True; observed True in original acceptance report; **pass**. [Evidence](evidence/measured-results.json)
-- all eight unrelated guest configurations unchanged: expected True; observed True in original acceptance report; **pass**. [Evidence](evidence/measured-results.json)
-- private dc dns only: expected True; observed True in original acceptance report; **pass**. [Evidence](evidence/measured-results.json)
-- domain diagnostics passed: expected True; observed True in original acceptance report; **pass**. [Evidence](evidence/measured-results.json)
-- client secure channel and sysvol: expected True; observed True in original acceptance report; **pass**. [Evidence](evidence/measured-results.json)
-- uac defender firewall retained: expected True; observed True in original acceptance report; **pass**. [Evidence](evidence/measured-results.json)
-- original owned directory structure retained: expected True; observed True in original acceptance report; **pass**. [Evidence](evidence/measured-results.json)
-- exact two ou sync scope: expected True; observed True in original acceptance report; **pass**. [Evidence](evidence/measured-results.json)
-- active unsuspended sync scheduler: expected True; observed True in original acceptance report; **pass**. [Evidence](evidence/measured-results.json)
-- sync cycle completed: expected True; observed True in original acceptance report; **pass**. [Evidence](evidence/measured-results.json)
-- no pending exports: expected True; observed True in original acceptance report; **pass**. [Evidence](evidence/measured-results.json)
-- twelve department users synced: expected True; observed True in original acceptance report; **pass**. [Evidence](evidence/measured-results.json)
-- privileged codex account kept cloud only: expected True; observed True in original acceptance report; **pass**. [Evidence](evidence/measured-results.json)
-- hybrid device local join: expected True; observed True in original acceptance report; **pass**. [Evidence](evidence/measured-results.json)
-- device authentication and tenant verified: expected True; observed True in original acceptance report; **pass**. [Evidence](evidence/measured-results.json)
-- exact enabled cloud hybrid device: expected True; observed True in original acceptance report; **pass**. [Evidence](evidence/measured-results.json)
-- actual standard user session: expected True; observed True in original acceptance report; **pass**. [Evidence](evidence/measured-results.json)
-- standard user prt and wam: expected True; observed True in original acceptance report; **pass**. [Evidence](evidence/measured-results.json)
-- client join and sso after restart: expected True; observed True in original acceptance report; **pass**. [Evidence](evidence/measured-results.json)
-- service identity is application certificate: expected True; observed True in original acceptance report; **pass**. [Evidence](evidence/measured-results.json)
-- sync service returned after dc restart without desktop login: expected True; observed True in original acceptance report; **pass**. [Evidence](evidence/measured-results.json)
-- post reboot sync request succeeded: expected True; observed True in original acceptance report; **pass**. [Evidence](evidence/measured-results.json)
-- protected admin cache reused from fresh process: expected True; observed True in original acceptance report; **pass**. [Evidence](evidence/measured-results.json)
-
-## Problems and resolutions
-
-- Client NAT adapter disabled at PnP level; enabled the identified device and used a scoped static guest NAT address after DHCP left APIPA.
-- Multihomed DC published unwanted NAT DNS addresses; restricted listening/publishing and authoritative records to the private LAN.
-- Older download links returned HTML; rejected unsigned payloads and used the signed Microsoft Connect MSI.
-- Machine trust required owned machine-password repair; refreshed native Netlogon verification before evaluating a stale PowerShell result.
-- Source-anchor writes needed the next delta confirmation; final pending exports were zero on both connectors.
-- Authentication metadata collection raced an asynchronous refresh; collected completed fresh-process status before final acceptance.
-
-## Evidence
-
-- [screenshots/02-dc-network-adapters.png](screenshots/02-dc-network-adapters.png) — Actual native lab capture; private identifiers masked, result values preserved.; captured 2026-10-22; source: Preserved console capture from this hybrid implementation; original bytes retained privately.; SHA-256 `347256b36d742d5f50ea21a820c5ebd7504a97c8a69585c94748f48497a438ff`
-- [screenshots/03-connect-welcome.png](screenshots/03-connect-welcome.png) — Actual native lab capture; private identifiers masked, result values preserved.; captured 2026-10-22; source: Preserved console capture from this hybrid implementation; original bytes retained privately.; SHA-256 `aa822280fe0f8f2c303e8d6460e01228809cb170709325e5789240193062bd10`
-- [screenshots/04-connect-installation-choice.png](screenshots/04-connect-installation-choice.png) — Actual native lab capture; private identifiers masked, result values preserved.; captured 2026-10-22; source: Preserved console capture from this hybrid implementation; original bytes retained privately.; SHA-256 `4daf03e812b271e485d50d4012b046e14289b064018e6ab25323110309ccb928`
-- [screenshots/05-connect-required-components.png](screenshots/05-connect-required-components.png) — Actual native lab capture; private identifiers masked, result values preserved.; captured 2026-10-22; source: Preserved console capture from this hybrid implementation; original bytes retained privately.; SHA-256 `c16af9a5437182bd4898a772976403e4ee2c5e3c20d607b6d2826e6e39a6f02e`
-- [screenshots/10-connect-password-hash-sync.png](screenshots/10-connect-password-hash-sync.png) — Actual native lab capture; private identifiers masked, result values preserved.; captured 2026-10-22; source: Preserved console capture from this hybrid implementation; original bytes retained privately.; SHA-256 `f14ceef33e3dfa9f4e63aae39cfc6cb3ddebcb0d521bafd02d4e44acf4563a76`
-- [screenshots/11-connect-tenant-account.png](screenshots/11-connect-tenant-account.png) — Actual native lab capture; private identifiers masked, result values preserved.; captured 2026-10-22; source: Preserved console capture from this hybrid implementation; original bytes retained privately.; SHA-256 `65bf0c6804318087c87af9720a9cd487eef276cdfbca65045c958cfb69c6a8d3`
-- [screenshots/14-connect-ad-service-account.png](screenshots/14-connect-ad-service-account.png) — Actual native lab capture; private identifiers masked, result values preserved.; captured 2026-10-22; source: Preserved console capture from this hybrid implementation; original bytes retained privately.; SHA-256 `9b93b28b17452d96975610282c5b0e658f807f5cf8b6d096ab0b866947a8a1e3`
-- [screenshots/16-connect-verified-upn.png](screenshots/16-connect-verified-upn.png) — Actual native lab capture; private identifiers masked, result values preserved.; captured 2026-10-22; source: Preserved console capture from this hybrid implementation; original bytes retained privately.; SHA-256 `268e704cdf788ad1880b52c54d105e39a99bd6d00de84d1c0bfab87cda5446be`
-- [screenshots/17-connect-ou-filtering.png](screenshots/17-connect-ou-filtering.png) — Actual native lab capture; private identifiers masked, result values preserved.; captured 2026-10-22; source: Preserved console capture from this hybrid implementation; original bytes retained privately.; SHA-256 `bc0105b21c98d0810fb45ec95adb651e648003e275fb2aa91e67572e3821bab7`
-- [screenshots/18-connect-source-anchor.png](screenshots/18-connect-source-anchor.png) — Actual native lab capture; private identifiers masked, result values preserved.; captured 2026-10-22; source: Preserved console capture from this hybrid implementation; original bytes retained privately.; SHA-256 `e9b2654416331e2a86fae023b70041a811d1905840c8a7b0978335d5b06bc150`
-- [screenshots/20-connect-optional-features.png](screenshots/20-connect-optional-features.png) — Actual native lab capture; private identifiers masked, result values preserved.; captured 2026-10-22; source: Preserved console capture from this hybrid implementation; original bytes retained privately.; SHA-256 `ed5779490dd47890421241dfbbfbdb7adeccce66ff90e27867736c046028b636`
-- [screenshots/21-connect-ready-review.png](screenshots/21-connect-ready-review.png) — Actual native lab capture; private identifiers masked, result values preserved.; captured 2026-10-22; source: Preserved console capture from this hybrid implementation; original bytes retained privately.; SHA-256 `9680a2fe346558c9ab22911b42c42c623f6fda8f0fd42a328e0977920061152f`
-- [screenshots/27-connect-staging-switch.png](screenshots/27-connect-staging-switch.png) — Actual native lab capture; private identifiers masked, result values preserved.; captured 2026-10-22; source: Preserved console capture from this hybrid implementation; original bytes retained privately.; SHA-256 `c2d7d2ac54d32eb0c0c8009c996925141e67c3f844ac2d4dd9fd5f725383da92`
-- [screenshots/29-connect-active-complete.png](screenshots/29-connect-active-complete.png) — Actual native lab capture; private identifiers masked, result values preserved.; captured 2026-10-22; source: Preserved console capture from this hybrid implementation; original bytes retained privately.; SHA-256 `87b208f18e5233de3dccc2a8fe51eaa4a20332eb3ae69d9db4908af752248e95`
-- [screenshots/30-client-standard-signin.png](screenshots/30-client-standard-signin.png) — Actual native lab capture; private identifiers masked, result values preserved.; captured 2026-10-22; source: Preserved console capture from this hybrid implementation; original bytes retained privately.; SHA-256 `714fe7b7375dea05524e2e376645473492d975d5f39740a03194ae54427c5173`
-- [screenshots/32-client-hybrid-prt-proof.png](screenshots/32-client-hybrid-prt-proof.png) — Actual native lab capture; private identifiers masked, result values preserved.; captured 2026-10-22; source: Preserved console capture from this hybrid implementation; original bytes retained privately.; SHA-256 `31692f6f25a339a968ae835eeb9323b8a84f24886565b0acbb59f43ba3192267`
-- [evidence/image-provenance.json](evidence/image-provenance.json) — Source/public image hashes and exact crop/mask coordinates.; captured 2026-10-22; source: Derived directly from original image bytes.; SHA-256 `69b1b5af6678b0018beb957bdd669abda173b8ca371de6f09000fd49a6ab9ca3`
-- [evidence/measured-results.json](evidence/measured-results.json) — Actual 23-check acceptance result; identifiers and private endpoints omitted.; captured 2026-10-23T03:26:00.973132+00:00; source: Allowlisted extract of completed validation; not a new lab execution.; SHA-256 `efb83d476cdc03bb078e46fcdfdf0c981d00a7d388efcc91ac07ed626ad0e789`
-- [evidence/user-session.json](evidence/user-session.json) — Measured interactive user context and PRT.; captured 2026-10-23; source: Allowlisted original verification output with account identity removed.; SHA-256 `42d9d877321182b07f552affb7650c190c1dd308da80ea496187de9cba7f61d0`
-- [evidence/sync-after-restart.json](evidence/sync-after-restart.json) — Measured service startup and sync request after DC restart.; captured 2026-10-23; source: Allowlisted original verification output with account identity removed.; SHA-256 `8bd1c293c2d608183fe39acfd312f8d26804d8dc06eb62d18b8b48259363332d`
-- [evidence/sync-final.json](evidence/sync-final.json) — Scheduler active, staging disabled, no pending exports on either connector.; captured 2026-10-23T03:20:48.9557218Z; source: Original sync inspection; connector names and DNs omitted.; SHA-256 `dee8f35d83bb93aaae367baff069bebdceac1f1a7700d678d17722122b563056`
-- [scripts/cc-hybrid-user-proof.ps1](scripts/cc-hybrid-user-proof.ps1) — Sanitized maintained PowerShell helper; public adaptation not executed.; captured 2026-10-22; source: Actual implementation source adapted to public examples.; SHA-256 `ea5322e8ed76f0fbc4a0134e33b6d0ccd151e809a8ed3eb10d45d44ecee3cb32`
-- [scripts/cc-hybrid-post-reboot-sync.ps1](scripts/cc-hybrid-post-reboot-sync.ps1) — Sanitized maintained PowerShell helper; public adaptation not executed.; captured 2026-10-22; source: Actual implementation source adapted to public examples.; SHA-256 `17f44f06e1ee7199758f5100b34fe4d8ff4453fbcca58e07060d5f9b4114dd68`
-- [scripts/cc-hybrid-sync-inspect.ps1](scripts/cc-hybrid-sync-inspect.ps1) — Sanitized maintained PowerShell helper; public adaptation not executed.; captured 2026-10-22; source: Actual implementation source adapted to public examples.; SHA-256 `f15c448e9f86c5b96252eb98f683686227924fa415bf61cefd24f082f24f7d5a`
-- [scripts/cc-hybrid-dns-fix.ps1](scripts/cc-hybrid-dns-fix.ps1) — Sanitized maintained PowerShell helper; public adaptation not executed.; captured 2026-10-22; source: Actual implementation source adapted to public examples.; SHA-256 `1262dd25d8b0afb11e7e12af16df6bd966084c873d663098174b087f1cd487b7`
-- [evidence/MANUAL.md](evidence/MANUAL.md) — Complete manual wizard sequence and commands with authentic screenshots.; captured 2026-10-22; source: Adapted original manual; public placeholders explicitly distinguished from tested values.; SHA-256 `2cd6d4d477a2e569d238f6c4e5e781bb4e641568b119dd2174fee9370e5cf3d8`
-- [evidence/PERSISTENT-ACCESS.md](evidence/PERSISTENT-ACCESS.md) — Protected delegated cache design, operating steps and reauthentication limits.; captured 2026-10-22; source: Original implementation notes, actual user and local path replaced with examples.; SHA-256 `f1cf05007be538118289d06e03e8f7da3298a0066e9d6631be0e41c17724f61b`
-- [diagrams/hybrid-identity.svg](diagrams/hybrid-identity.svg) — Conceptual identity workflow; not a screenshot or execution evidence.; captured 2026-10-22; source: New explanatory vector based on the measured architecture.; SHA-256 `0a55da798f06e79bb1d17226feb9d3df6ea29c85225a2fd87472656a33a43bc1`
-- [evidence/BUILD-STORY.md](evidence/BUILD-STORY.md) — Chronological requirements, commands, diagnosis, results and lessons.; captured 2026-10-22; source: Organized from this conversation and its saved implementation records.; SHA-256 `5380b00063ed1ba9d311d83f01a418b98850f18d5cbc153cd99dc9d974d7cae0`
-
-## Limitations and next steps
-
-Original implementation evidence, captured October 22 local / October 23 UTC; publication does not rerun the lab. Host reboot, browser application SSO and licensed Office access were not tested. PRT verification demonstrates user SSO token acquisition, not app access. Public scripts and placeholder instructions were not independently replayed. Single existing QEMU/Proxmox platform tested. Connect installed on the DC for this small training lab; production placement and capacity require a separate design. Password and MFA prompts are intentionally excluded from screenshots. Cloud-only administrator retained; no Windows automatic login configured.
-
-[Additional notes](NOTES.md). This README is generated from `project.json`; Codex maintains both the metadata and linked artifacts.
+[Additional notes](NOTES.md). This README is generated by `tools/render.py`.
