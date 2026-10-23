@@ -8,6 +8,6 @@ This portfolio shows the architecture, problems solved, and verified outcomes be
 
 ## Selected projects
 
-<a href="projects/day-01/README.md"><img src="assets/day-01-card.svg" alt="Active Directory lab architecture" width="420"></a>
+<a href="projects/day-01/README.md"><img src="assets/day-01-card.svg" alt="Active Directory lab architecture" width="760"></a>
 
-<a href="projects/day-02/README.md"><img src="assets/day-02-card.svg" alt="Hybrid identity lab architecture" width="420"></a>
+<a href="projects/day-02/README.md"><img src="assets/day-02-card.svg" alt="Hybrid identity lab architecture" width="760"></a>
