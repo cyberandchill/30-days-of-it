@@ -37,7 +37,7 @@ Ordinary-user SAML login and post-restart login succeeded; administration was de
 
 **Limitations:** This was a controlled lab validation, not a production deployment.
 
-[Extended technical reference](REFERENCE.md)
+[Extended technical reference](TECHNICAL-REFERENCE.md)
 
 </details>
 
