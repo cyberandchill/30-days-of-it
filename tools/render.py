@@ -53,7 +53,7 @@ def card(p):
     prefix = f'projects/day-{day:02}'
     if p['status'] == 'verified':
         return (f'<a href="{prefix}/README.md"><img src="assets/day-{day:02}-card.svg" '
-                f'alt="{esc(p["title"])} architecture card" width="420"></a>')
+                f'alt="{esc(p["title"])} architecture card" width="760"></a>')
     return f'- [Day {day:02}: {esc(p["title"])} — {STATUSES[p["status"]]}]({prefix}/README.md)'
 
 def bullets(items, empty):
