@@ -65,19 +65,25 @@ def outputs(projects):
     pending = [p for p in projects if p['status'] != 'verified']
     gallery = '\n\n'.join(card(p) for p in featured) or '_No verified projects yet._'
     upcoming = '\n'.join(card(p) for p in pending)
-    readme = f'''# Build 30 for 30
+    readme = f'''# CyberAndChill | Technical Portfolio
 
-Practical IT projects, architecture diagrams, results, and manual walkthroughs.
+**Identity Engineering · IT Infrastructure · Security**
 
-One architecture card per completed build. Open it for the outcome, a manual step-by-step guide with authentic screenshots, and optional technical evidence.
+I build and validate practical IT environments that demonstrate how enterprise technology works—from directory services and workstation management to hybrid identity.
 
-[Projects](#projects)
+This portfolio shows the architecture, problems solved, and verified outcomes behind each project. Open a project to explore its results, screenshots, and a step-by-step manual walkthrough.
 
-## Projects
+## Selected projects
+
+### Build 30 for 30
+
+A growing collection of hands-on IT projects. Each build demonstrates a technical use case and a working result.
 
 {gallery}
 
+---
 
+**Building your own portfolio?** [See how to structure a project for your résumé or job applications](docs/START-HERE.md). Show what you built, what problem it solved, and how you verified it.
 '''
     result = {ROOT/'README.md': readme}
     for p in projects:
