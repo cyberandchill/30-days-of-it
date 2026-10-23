@@ -39,6 +39,7 @@ def load():
             local(base, p['visual'])
             assert p['visual'] in paths
         if p['status'] == 'verified':
+            local(ROOT, f'assets/day-{number:02}-card.svg')
             assert p['visual'] and p['tests'] and all(t['result'] == 'pass' for t in p['tests'])
             assert p['steps'] and p['technologies'] and p['skills'] and p['evidence']
         projects.append(p)
