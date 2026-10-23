@@ -6,7 +6,11 @@
 
 Extended an existing AD lab with scoped directory synchronization and Windows 11 hybrid join.
 
-**Why it matters:** Connect on-premises identities to a cloud directory while preserving administrator separation and service access after guest restarts.
+## Why it matters
+
+Connect on-premises identities to a cloud directory while preserving administrator separation and service access after guest restarts.
+
+## Architecture
 
 ![Architecture](screenshots/32-client-hybrid-prt-proof.png)
 
@@ -14,13 +18,13 @@ Extended an existing AD lab with scoped directory synchronization and Windows 11
 
 [**Follow the manual GUI walkthrough →**](GUIDE.md)
 
-The guide gives numbered GUI clicks, settings, useful original screenshots and expected results. Automation and audit records are optional.
+The guide gives numbered GUI clicks, settings, useful original screenshots and expected results. An extended technical reference is available when needed.
 
 ## Result
 
 23/23 acceptance checks passed. Twelve users synchronized; exact cloud device enabled with ServerAd trust. Both joins, successful device authentication and standard-user PRT verified after client restart. Sync service resumed automatically after server restart.
 
-**Technologies demonstrated:** Windows Server, Active Directory, DNS, Microsoft Entra ID, Windows 11
+**Technologies demonstrated:** Windows Server 2022, Windows 11 Pro, AD DS / DNS, Microsoft Entra Connect Sync, PowerShell
 
 <details>
 <summary>Technical evidence, validation and troubleshooting</summary>
@@ -32,6 +36,8 @@ The guide gives numbered GUI clicks, settings, useful original screenshots and e
 
 
 **Limitations:** This was a controlled lab validation, not a production deployment.
+
+
 
 </details>
 

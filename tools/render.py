@@ -1,10 +1,11 @@
-"""Validate evidence references and render the 30-day GitHub portfolio. Standard library only."""
+"""Validate evidence references and render the technical portfolio. Standard library only."""
 import argparse
 import hashlib
 import html
 import json
 from pathlib import Path
 import re
+from card_validation import card_asset, check_label, validate_presentation
 
 ROOT = Path(__file__).resolve().parents[1]
 STATUSES = {'planned': '○ Planned', 'in-progress': '◐ In progress', 'blocked': '! Blocked', 'verified': '✓ Verified'}
@@ -52,20 +53,17 @@ def card(p):
     day = p['day']
     prefix = f'projects/day-{day:02}'
     if p['status'] == 'verified':
-        asset = 'assets/hybrid-identity-portrait-v2.svg' if day == 2 else f'assets/day-{day:02}-card.svg'
+        asset = card_asset(p)
         return (f'<a href="{prefix}/README.md"><img src="{asset}" '
                 f'alt="{esc(p.get("gallery_alt", {1: "Active Directory lab architecture", 2: "Hybrid identity lab architecture"}.get(day, p["title"]+" architecture card")))}" width="760"></a>')
-    return f'- [Day {day:02}: {esc(p["title"])} — {STATUSES[p["status"]]}]({prefix}/README.md)'
+    return ''
 
 def bullets(items, empty):
     return '\n'.join('- '+str(x) for x in items) if items else empty
 
 def outputs(projects):
-    completed = sum(p['status'] == 'verified' for p in projects)
     featured = [p for p in projects if p['status'] == 'verified']
-    pending = [p for p in projects if p['status'] != 'verified']
     gallery = '\n\n'.join(card(p) for p in featured) or '_No verified projects yet._'
-    upcoming = '\n'.join(card(p) for p in pending)
     readme = f'''# CyberAndChill | Technical Portfolio
 
 **Identity Engineering · IT Infrastructure · Security**
@@ -82,24 +80,18 @@ This portfolio shows the architecture, problems solved, and verified outcomes be
 '''
     result = {ROOT/'README.md': readme}
     for p in projects:
-        if p['status'] != 'verified':
-            continue
         base = ROOT/'projects'/f'day-{p["day"]:02}'
-        if p.get('readme_layout') == 'manual-first':
-            guide_text = local(base, p['manual_guide']).read_text().split('\n', 1)[1].lstrip()
-            history = local(base, p['supporting_history']).read_text().replace('# Supporting technical record', '## Supporting technical record', 1)
-            result[base/'README.md'] = (f"# Day {p['day']:02} · {p['title']}\n\n"
-                f"**{STATUSES[p['status']]}** · [Portfolio](../../README.md)\n\n"
-                f"{p['built']} **Result:** {p['outcome']}\n\n"
-                "[**Follow the standalone manual GUI walkthrough →**](GUIDE.md) · [Supporting build history](BUILD-STORY.md)\n\n"
-                + guide_text + "\n---\n\n" + history + "\n")
-            continue
         visual = f'![Implementation result]({p["visual"]})' if p['visual'] else '![Placeholder — no implementation evidence](../../assets/awaiting-evidence.svg)'
         passing = sum(t['result'] == 'pass' for t in p['tests'])
         total = len(p['tests'])
-        guide = base / 'GUIDE.md'
-        guide_link = "[**Follow the manual GUI walkthrough →**](GUIDE.md)" if guide.is_file() else "Manual GUI walkthrough not published yet."
-        diagram = f"![Architecture]({p['visual']})" if p['visual'] else ""
+        guide_name = p.get('manual_guide', 'GUIDE.md')
+        guide = base / guide_name
+        guide_link = f"[**Follow the manual GUI walkthrough →**]({guide_name})" if guide.is_file() else "Manual GUI walkthrough not published yet."
+        if p['status'] == 'verified': local(base, guide_name)
+        if p.get('extended_reference'): local(base, p['extended_reference'])
+        diagram = f"![Architecture]({p['visual']})" if p['visual'] else "_No implementation visual recorded yet._"
+        reference = p.get('extended_reference')
+        reference_link = f'[Extended technical reference]({reference})' if reference else ''
         details = f"""<details>
 <summary>Technical evidence, validation and troubleshooting</summary>
 
@@ -109,9 +101,13 @@ This portfolio shows the architecture, problems solved, and verified outcomes be
 
 
 
-**Limitations:** {'This was a controlled lab build; it is not a production deployment.' if p['day'] == 1 else 'This was a controlled lab validation, not a production deployment.'}
+**Limitations:** {p.get('overview_limitations', 'This was a controlled lab validation, not a production deployment.')}
+
+{reference_link}
 
 </details>"""
+        if p['status'] != 'verified': details = ''
+        guide_summary = 'The guide gives numbered GUI clicks, settings, useful original screenshots and expected results. An extended technical reference is available when needed.' if guide.is_file() else 'A manual walkthrough will be linked after implementation.'
         text = f"""# {p['title']}
 
 **{STATUSES[p['status']]}** · [CyberAndChill Portfolio](../../README.md)
@@ -120,7 +116,11 @@ This portfolio shows the architecture, problems solved, and verified outcomes be
 
 {p['built']}
 
-**Why it matters:** {p['problem']}
+## Why it matters
+
+{p['problem']}
+
+## Architecture
 
 {diagram}
 
@@ -128,13 +128,13 @@ This portfolio shows the architecture, problems solved, and verified outcomes be
 
 {guide_link}
 
-The guide gives numbered GUI clicks, settings, useful original screenshots and expected results. Automation and audit records are optional.
+{guide_summary}
 
 ## Result
 
-{('Validated domain services, organized identities and groups, client domain membership, and administrative privilege separation.' if p['day'] == 1 else p['outcome'])}
+{p['outcome']}
 
-**Technologies demonstrated:** {('Windows Server 2022, Windows 11 Pro, Active Directory, DNS' if p['day'] == 1 else 'Windows Server, Active Directory, DNS, Microsoft Entra ID, Windows 11' if p['day'] == 2 else ', '.join(x for x in p['technologies'] if x not in ('Ansible', 'Proxmox / QEMU', 'MSAL / GNOME Keyring')) or 'Not selected.')}
+**Technologies demonstrated:** {', '.join(p['technologies']) or 'None claimed yet.'}
 
 {details}
 
@@ -158,12 +158,14 @@ def scan():
 
 def main():
     parser = argparse.ArgumentParser(); parser.add_argument('--check', action='store_true'); args = parser.parse_args()
-    rendered = outputs(load())
+    projects = load()
+    rendered = outputs(projects)
+    presentation = validate_presentation(ROOT, projects, rendered)
+    scan()
     for path, content in rendered.items():
         if args.check:
             assert path.read_text() == content, 'Generated file out of date: '+str(path)
         else: path.write_text(content)
-    scan()
-    print('PASS: portfolio projects, evidence references, hashes, status gates, generated content, heuristic secret scan.')
+    print('PASS: portfolio projects, evidence references, hashes, status gates, generated content, card numbering/branding gate, raster OCR, heuristic secret scan.')
 
 if __name__ == '__main__': main()
