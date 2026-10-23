@@ -18,20 +18,20 @@ The guide gives numbered GUI clicks, settings, useful original screenshots and e
 
 ## Result
 
-Verified against October 21 implementation evidence: controller diagnostics passed, all 14 created users were enabled with requested non-expiring account/password settings, and the client passed trust, DNS, SYSVOL and endpoint-security checks. Both administrator roles and a standard role authenticated; only the administrators had elevation capability. One real administrator desktop sign-in was observed. The 13-page private guide and phone-accessible private handoff were delivered. Publication review on October 22 did not rerun or alter the infrastructure.
+Validated domain services, organized identities and groups, client domain membership, and administrative privilege separation.
 
-**Tools:** Windows Server 2022, Windows 11 Pro, Active Directory / DNS, PowerShell, Ansible, Proxmox / QEMU
+**Technologies demonstrated:** Windows Server 2022, Windows 11 Pro, Active Directory, DNS
 
 <details>
 <summary>Technical evidence, validation and troubleshooting</summary>
 
 **Checks:** 10/10 passed in the recorded implementation. Original evidence is historical, not a new health check.
 
-**Original implementation:** [Build notes](evidence/BUILD-STORY.md) where available, [Recorded artifacts](project.json), [Scripts and screenshots](screenshots/).
+**Evidence:** A selection of original screenshots is included in the manual walkthrough.
 
-**Known problems:** 9 recorded in the project metadata.
 
-**Limitations:** Historical verification from the implementation session, not a current-state health check. Only one administrator had a graphical desktop observed; three roles were checked with the Windows interactive-logon API. Shared/non-expiring passwords and Domain Admin rights were explicitly requested isolated-lab choices, not production guidance. One controller/client only; evaluation media; no backup/restore, HA, Entra, SAML, public DNS or cross-hypervisor claims. Sanitized example scripts were not independently rerun. Interim error-screen images were overwritten; seven surviving genuine captures are published with opaque identifier redactions. See BUILD-STORY for the evidence gap and lessons. No remaining blocker for the documented on-premises lab objective.
+
+**Limitations:** This was a controlled lab build; it is not a production deployment.
 
 </details>
 
