@@ -1,0 +1,204 @@
+[
+  {
+    "public_path": "screenshots/01-windows-first-start.png",
+    "source_description": "Preserved native Windows guest capture from this conversation",
+    "original_sha256": "ae0e651248893aff0c1dfb3f2b3b142f3dbdb7e96a5958809b0dcc3b2d9eee81",
+    "published_sha256": "3698bae524ae9206000662679d0722e76241312253b99d8b6c3411cf27469406",
+    "captured_date": "2026-10-21",
+    "processed_date": "2026-10-22",
+    "crop_original_pixels": [
+      670,
+      100,
+      1120,
+      720
+    ],
+    "redaction_rectangles_original_pixels": [],
+    "processing": "Lossless pixel crop and opaque redaction only; no AI image generation, no synthetic result text. Redactions described in the caption."
+  },
+  {
+    "public_path": "screenshots/02-directory-organization.png",
+    "source_description": "Preserved native Windows guest capture from this conversation",
+    "original_sha256": "c96eb8905b66fcc7308bdc02c53e2e8852578d363eaf802899106b5c35dcf06f",
+    "published_sha256": "b813649380d0166fdeee157e13bb781ddc8cdf10a9bbb812d1a915cf403b5615",
+    "captured_date": "2026-10-21",
+    "processed_date": "2026-10-22",
+    "crop_original_pixels": [
+      0,
+      0,
+      780,
+      435
+    ],
+    "redaction_rectangles_original_pixels": [
+      [
+        29,
+        113,
+        160,
+        132
+      ],
+      [
+        54,
+        164,
+        158,
+        185
+      ]
+    ],
+    "processing": "Lossless pixel crop and opaque redaction only; no AI image generation, no synthetic result text. Redactions described in the caption."
+  },
+  {
+    "public_path": "screenshots/03-account-lifetime-settings.png",
+    "source_description": "Preserved native Windows guest capture from this conversation",
+    "original_sha256": "d98c91810c7bd900c3b1a8c0bcce4f0d9df5600d3131f32fc21073a3ff0d5eca",
+    "published_sha256": "6fbddb49aa427fd49b73a9b72410a7dad48fbd46781ae1178fb21c1991b89605",
+    "captured_date": "2026-10-21",
+    "processed_date": "2026-10-22",
+    "crop_original_pixels": [
+      435,
+      108,
+      846,
+      647
+    ],
+    "redaction_rectangles_original_pixels": [
+      [
+        441,
+        112,
+        626,
+        136
+      ],
+      [
+        458,
+        229,
+        632,
+        253
+      ],
+      [
+        636,
+        230,
+        815,
+        253
+      ],
+      [
+        458,
+        275,
+        815,
+        301
+      ]
+    ],
+    "processing": "Lossless pixel crop and opaque redaction only; no AI image generation, no synthetic result text. Redactions described in the caption."
+  },
+  {
+    "public_path": "screenshots/04-domain-admin-membership.png",
+    "source_description": "Preserved native Windows guest capture from this conversation",
+    "original_sha256": "b7cd0478421c8cb789a383c76051cd572ac8f373bf3a0d23a8e351f11bc975d9",
+    "published_sha256": "f9fbc48247f9cd47f995a844c2b725fa79c55042d0790a990f73578d5465b37c",
+    "captured_date": "2026-10-21",
+    "processed_date": "2026-10-22",
+    "crop_original_pixels": [
+      435,
+      108,
+      846,
+      647
+    ],
+    "redaction_rectangles_original_pixels": [
+      [
+        441,
+        112,
+        626,
+        136
+      ],
+      [
+        561,
+        256,
+        812,
+        310
+      ]
+    ],
+    "processing": "Lossless pixel crop and opaque redaction only; no AI image generation, no synthetic result text. Redactions described in the caption."
+  },
+  {
+    "public_path": "screenshots/05-department-group-members.png",
+    "source_description": "Preserved native Windows guest capture from this conversation",
+    "original_sha256": "bcf9a4a2ce13627379e3c37a5206a897ded6295b818d32679f28e544acb93865",
+    "published_sha256": "3ade8bdf4cff132f738ceb47c832044b4bea6bf282ffd9838e619bf2fb0f3655",
+    "captured_date": "2026-10-21",
+    "processed_date": "2026-10-22",
+    "crop_original_pixels": [
+      435,
+      108,
+      836,
+      565
+    ],
+    "redaction_rectangles_original_pixels": [
+      [
+        469,
+        219,
+        815,
+        279
+      ]
+    ],
+    "processing": "Lossless pixel crop and opaque redaction only; no AI image generation, no synthetic result text. Redactions described in the caption."
+  },
+  {
+    "public_path": "screenshots/06-windows-domain-membership.png",
+    "source_description": "Preserved native Windows guest capture from this conversation",
+    "original_sha256": "79d6a2dcf9058698dd1c7da76d00d85dc4b44f55beae4c0b19c9db9de85710ac",
+    "published_sha256": "b15740c6ff317129f628435a45c6dd2b7614e5053c759a8d72a7424da38b3c59",
+    "captured_date": "2026-10-21",
+    "processed_date": "2026-10-22",
+    "crop_original_pixels": [
+      164,
+      157,
+      574,
+      625
+    ],
+    "redaction_rectangles_original_pixels": [
+      [
+        306,
+        326,
+        542,
+        347
+      ],
+      [
+        306,
+        350,
+        542,
+        370
+      ]
+    ],
+    "processing": "Lossless pixel crop and opaque redaction only; no AI image generation, no synthetic result text. Redactions described in the caption."
+  },
+  {
+    "public_path": "screenshots/07-domain-desktop-session.png",
+    "source_description": "Preserved native Windows guest capture from this conversation",
+    "original_sha256": "a004eb0ff79deca78e4f28f0ef957d414e5d72ea904c4777c1be630ed1d5b058",
+    "published_sha256": "1641da3e7fafdb53f1b0408a4845527272a33920cfa311be69c29c4a540b3fdf",
+    "captured_date": "2026-10-21",
+    "processed_date": "2026-10-22",
+    "crop_original_pixels": [
+      78,
+      79,
+      700,
+      245
+    ],
+    "redaction_rectangles_original_pixels": [
+      [
+        83,
+        127,
+        240,
+        145
+      ],
+      [
+        83,
+        145,
+        340,
+        164
+      ],
+      [
+        83,
+        165,
+        241,
+        184
+      ]
+    ],
+    "processing": "Lossless pixel crop and opaque redaction only; no AI image generation, no synthetic result text. Redactions described in the caption."
+  }
+]

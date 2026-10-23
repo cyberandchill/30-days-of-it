@@ -1,0 +1,35 @@
+{
+  "reviewed_date": "2026-10-22",
+  "historical_lab_checks_not_rerun": true,
+  "renderer_and_check": "Passed on updated project metadata",
+  "baseline_remote_git_blobs_verified": 250,
+  "all_notes_preserved": true,
+  "unrelated_days_preserved": 29,
+  "native_screenshots": 7,
+  "private_scan": {
+    "passed": true,
+    "text_files_scanned": 258,
+    "actual_private_password_hits": 0,
+    "private_identifier_hits": 0,
+    "private_address_hits": 0,
+    "private_cloud_share_links": 0,
+    "image_review": "All seven public PNGs visually inspected after opaque redaction; sources unchanged.",
+    "public_script_variants": "Examples only; not claimed as replayed execution."
+  },
+  "local_preview": {
+    "local_links_checked": 142,
+    "images_loaded": true,
+    "unchanged_card_template": true,
+    "seven_native_images_reviewed": true,
+    "source_capture_dates_retained": true
+  },
+  "regression_fixture": {
+    "passed": true,
+    "tests": 6,
+    "execution_scope": "Unmodified starter tests run against commit-pinned planned-project baseline fixture; current published metadata is validated separately by render.py --check.",
+    "reason": "test_verified_without_evidence_rejected only sets status=verified and assumes Day 01 has no evidence. Once Day 01 is genuinely verified, the real dataset no longer supplies that missing-evidence fixture.",
+    "renderer_source_unchanged": true,
+    "output": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.041s\n\nOK"
+  },
+  "scope": "Only Day 01 and generated portfolio documents. Current documentation review is distinct from original implementation checks."
+}

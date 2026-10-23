@@ -1,0 +1,95 @@
+{
+  "domain_controller": {
+    "verified_at_utc": "2026-10-22T02:30:58.9114482Z",
+    "passed": true,
+    "diagnostic_tests": {
+      "Connectivity": true,
+      "Advertising": true,
+      "SysVolCheck": true,
+      "NetLogons": true,
+      "Services": true,
+      "DNS": true
+    }
+  },
+  "directory": {
+    "enabled_created_users": 14,
+    "all_created_passwords_never_expire": true,
+    "all_created_accounts_never_expire": true,
+    "security_groups": 5,
+    "created_ous": 10,
+    "domain_administrators": 2,
+    "department_group_member_counts": [
+      3,
+      3,
+      3,
+      3
+    ],
+    "computer_enabled_in_workstations_ou": true
+  },
+  "client": {
+    "verified_at_utc": "2026-10-22T02:30:56.1698908Z",
+    "os": "Microsoft Windows 11 Pro",
+    "passed": true,
+    "part_of_domain": true,
+    "client_and_directory_computer_names_match": true,
+    "client_and_directory_domains_match": true,
+    "secure_channel": true,
+    "dns_controller_record_present": true,
+    "sysvol_access": true,
+    "defender": "Running",
+    "firewall_profiles": [
+      {
+        "name": "Domain",
+        "enabled": true
+      },
+      {
+        "name": "Private",
+        "enabled": true
+      },
+      {
+        "name": "Public",
+        "enabled": true
+      }
+    ],
+    "oobe_in_progress": 0,
+    "system_setup_in_progress": 0,
+    "interactive_administrator_session_observed": true
+  },
+  "credential_and_role_tests": {
+    "method": "Windows LogonUser API with interactive logon type; administrator capability checked with the linked elevated UAC token when present; not three separate GUI sessions.",
+    "passed": true,
+    "results": [
+      {
+        "public_role_alias": "ADMIN-A",
+        "interactive_logon_validated": true,
+        "administrator_capability": true
+      },
+      {
+        "public_role_alias": "ADMIN-B",
+        "interactive_logon_validated": true,
+        "administrator_capability": true
+      },
+      {
+        "public_role_alias": "STANDARD-A",
+        "interactive_logon_validated": true,
+        "administrator_capability": false
+      }
+    ]
+  },
+  "preservation_and_delivery": {
+    "unrelated_vm_configurations_hash_verified_unchanged": 8,
+    "private_guide_pages": 13,
+    "private_guide_screenshots": 6,
+    "private_password_hits": 0,
+    "cloud_changes": false
+  },
+  "provenance": {
+    "scope": "Historical checks executed during this conversation on October 21, 2026 America/New_York; UTC timestamps cross into October 22. Publication review is not a fresh infrastructure test.",
+    "sanitization": "Selected measured fields only. Hostnames, actual AD namespace, addresses, identities, DNs, SIDs, VM IDs, workstation paths and cloud file IDs omitted. Role aliases are pseudonyms, not account logon names.",
+    "original_source_sha256": {
+      "controller_report": "b86e11f80a9b1328fdb48104d6064acc9f401d1b609f24c14fda8c395c701ef0",
+      "client_report": "5ffe954cf1d839777054c60e04421b91efe16cd5be4bdb515d7a2db936d7c90c",
+      "completion_report": "1a46cebc673e983c5460a87c011f5a6e42622c33879d96e0fe56e2049c19f52d"
+    }
+  }
+}
