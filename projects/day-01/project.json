@@ -8,9 +8,7 @@
     "Windows Server 2022",
     "Windows 11 Pro",
     "Active Directory / DNS",
-    "PowerShell",
-    "Ansible",
-    "Proxmox / QEMU"
+    "PowerShell"
   ],
   "skills": [
     "Identity administration",

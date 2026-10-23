@@ -6,7 +6,11 @@
 
 Built an isolated Windows Server domain and joined Windows 11; verified 14 users, 5 groups, device trust and administrator separation.
 
-**Why it matters:** Centralize user sign-in and onboard a workstation while preserving the existing environment.
+## Why it matters
+
+Centralize user sign-in and onboard a workstation while preserving the existing environment.
+
+## Architecture
 
 ![Architecture](screenshots/02-directory-organization.png)
 
@@ -14,13 +18,13 @@ Built an isolated Windows Server domain and joined Windows 11; verified 14 users
 
 [**Follow the manual GUI walkthrough →**](GUIDE.md)
 
-The guide gives numbered GUI clicks, settings, useful original screenshots and expected results. Automation and audit records are optional.
+The guide gives numbered GUI clicks, settings, useful original screenshots and expected results. An extended technical reference is available when needed.
 
 ## Result
 
-Validated domain services, organized identities and groups, client domain membership, and administrative privilege separation.
+Verified against October 21 implementation evidence: controller diagnostics passed, all 14 created users were enabled with requested non-expiring account/password settings, and the client passed trust, DNS, SYSVOL and endpoint-security checks. Both administrator roles and a standard role authenticated; only the administrators had elevation capability. One real administrator desktop sign-in was observed. The 13-page private guide and phone-accessible private handoff were delivered. Publication review on October 22 did not rerun or alter the infrastructure.
 
-**Technologies demonstrated:** Windows Server 2022, Windows 11 Pro, Active Directory, DNS
+**Technologies demonstrated:** Windows Server 2022, Windows 11 Pro, Active Directory / DNS, PowerShell
 
 <details>
 <summary>Technical evidence, validation and troubleshooting</summary>
@@ -31,7 +35,9 @@ Validated domain services, organized identities and groups, client domain member
 
 
 
-**Limitations:** This was a controlled lab build; it is not a production deployment.
+**Limitations:** This was a controlled lab validation, not a production deployment.
+
+
 
 </details>
 

@@ -29,7 +29,7 @@ class PortfolioTests(unittest.TestCase):
 
     def test_all_30_slots(self):
         self.assertEqual(len(render.load()), 30)
-        self.assertEqual(len(render.outputs(render.load())), 31)
+        self.assertEqual(len(render.outputs(render.load())), 1 + sum(p['status']=='verified' for p in render.load()))
 
     def test_verified_without_evidence_rejected(self):
         self.edit(status='verified')
@@ -57,13 +57,41 @@ class PortfolioTests(unittest.TestCase):
         self.edit(evidence=[dict(path='evidence/result.txt', caption='Test fixture', captured='unit-test', source='unit-test', public_reviewed=False, sha256=hashlib.sha256(payload).hexdigest())])
         with self.assertRaises(AssertionError): render.load()
 
-    def test_visual_gallery_and_collapsed_upcoming(self):
+    def test_professional_gallery(self):
         text = render.outputs(render.load())[render.ROOT/'README.md']
-        self.assertIn('2/30 verified projects', text)
-        self.assertIn('<details>', text)
-        self.assertIn('Upcoming days (28)', text)
-        self.assertIn('assets/day-02-card.svg', text)
+        self.assertNotIn('/30 verified', text)
+        self.assertNotIn('Upcoming days', text)
         self.assertNotIn('screenshots/', text)
         self.assertIn('projects/day-01/README.md', text)
+        self.assertEqual(text.count('<a href="projects/'), sum(p['status']=='verified' for p in render.load()))
+
+    def test_shared_readme_contract(self):
+        for path, text in render.outputs(render.load()).items():
+            if path == render.ROOT/'README.md': continue
+            sections = ['## What I built', '## Why it matters', '## Architecture', '## Rebuild it yourself', '## Result', '<details>']
+            positions = [text.index(x) for x in sections]
+            self.assertEqual(positions, sorted(positions))
+            self.assertNotIn('## Step ', text)
+            self.assertNotIn('# Day ', text)
+            self.assertIn('Technologies demonstrated:', text)
+
+    def test_manual_first_flag_cannot_embed_walkthrough(self):
+        records = render.load()
+        records[0]['readme_layout']='manual-first'
+        text=render.outputs(records)[render.ROOT/'projects/day-01/README.md']
+        self.assertIn('## What I built', text)
+        self.assertNotIn('## Step 1', text)
+
+    def test_card_dimensions_and_no_challenge_text(self):
+        import re
+        import xml.etree.ElementTree as ET
+        for p in render.load():
+            if p['status']!='verified': continue
+            link=render.card(p)
+            asset=re.search(r'src="([^"]+)"',link).group(1)
+            root=ET.parse(render.ROOT/asset).getroot()
+            self.assertEqual((root.get('width'),root.get('height')),('760','850'))
+            visible=' '.join(root.itertext())
+            self.assertNotRegex(visible, r'(?i)\bday\s*0?\d+\b|30.days|challenge')
 
 if __name__ == '__main__': unittest.main()

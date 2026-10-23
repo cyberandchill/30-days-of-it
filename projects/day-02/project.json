@@ -9,9 +9,7 @@
     "Windows 11 Pro",
     "AD DS / DNS",
     "Microsoft Entra Connect Sync",
-    "PowerShell",
-    "Ansible",
-    "MSAL / GNOME Keyring"
+    "PowerShell"
   ],
   "skills": [
     "Hybrid identity",
@@ -114,7 +112,7 @@
       "evidence": "evidence/measured-results.json"
     },
     {
-      "check": "privileged codex account kept cloud only",
+      "check": "privileged administrator account kept cloud only",
       "expected": "True",
       "observed": "True in original acceptance report",
       "result": "pass",
@@ -434,5 +432,5 @@
     }
   ],
   "visual": "screenshots/32-client-hybrid-prt-proof.png",
-  "limitations": "Original implementation evidence, captured October 22 local / October 23 UTC; publication does not rerun the lab. Host reboot, browser application SSO and licensed Office access were not tested. PRT verification demonstrates user SSO token acquisition, not app access. Public scripts and placeholder instructions were not independently replayed. Single existing QEMU/Proxmox platform tested. Connect installed on the DC for this small training lab; production placement and capacity require a separate design. Password and MFA prompts are intentionally excluded from screenshots. Cloud-only administrator retained; no Windows automatic login configured."
+  "limitations": "Original implementation evidence, captured October 22 local / October 23 UTC; publication does not rerun the lab. Host reboot, browser application SSO and licensed Office access were not tested. PRT verification demonstrates user SSO token acquisition, not app access. Public scripts and placeholder instructions were not independently replayed. One implementation platform tested. Connect installed on the DC for this small training lab; production placement and capacity require a separate design. Password and MFA prompts are intentionally excluded from screenshots. Cloud-only administrator retained; no Windows automatic login configured."
 }

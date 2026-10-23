@@ -23,8 +23,8 @@
   "objective": "Demonstrate a real SAML browser flow, assertion validation and least-privilege Jenkins access.",
   "outcome": "Ordinary-user SAML login and post-restart login succeeded; administration was denied with HTTP 403.",
   "steps": [
-    "Follow the complete [manual GUI walkthrough](GUIDE.md).",
-    "Inspect the [sanitized build history](BUILD-STORY.md) and original measured application outcomes."
+    "Follow the concise [manual GUI walkthrough](MANUAL-SETUP.md).",
+    "Consult the [extended technical reference](REFERENCE.md) for configuration detail and evidence boundaries."
   ],
   "tests": [
     {
@@ -237,7 +237,7 @@
       "caption": "Conventional GUI-first reproduction guide with tested/derived status.",
       "source": "Written from working configuration, authentic screenshots and official product documentation; fresh manual replay not performed.",
       "captured": "2026-10-23",
-      "sha256": "1412eb2e5a33f965342e84c90f8245713e34303949560ce8966961aa30c083ed",
+      "sha256": "6d24cb97cf4539a9e5881ddbb9b915e071afbf76af2a6483c06780d71997532d",
       "public_reviewed": true
     },
     {
@@ -259,9 +259,9 @@
   ],
   "visual": "diagrams/saml-browser-flow.svg",
   "limitations": "Historical October 23, 2026 implementation evidence. Entra GUI procedure and fresh manual bootstrap sequence are derived, not independently replayed. Separate admin/unassigned-user browser tests, replay, rollover, MFA policy changes and reboot behavior remain untested.",
-  "readme_layout": "standard",
   "manual_guide": "MANUAL-SETUP.md",
   "supporting_history": "BUILD-STORY.md",
   "gallery_alt": "Jenkins SAML sign-in architecture",
-  "completed_date": "2026-10-23"
+  "completed_date": "2026-10-23",
+  "extended_reference": "REFERENCE.md"
 }
