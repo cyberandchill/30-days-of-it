@@ -60,23 +60,31 @@ def bullets(items, empty):
 
 def outputs(projects):
     completed = sum(p['status'] == 'verified' for p in projects)
+    featured = [p for p in projects if p['status'] == 'verified']
+    pending = [p for p in projects if p['status'] != 'verified']
+    gallery = '\n\n'.join(card(p) for p in featured) or '_No verified projects yet._'
+    upcoming = '\n'.join(card(p) for p in pending)
     readme = f'''# 30 Days of IT · Build. Test. Show.
 
-**{completed}/30 verified projects** · Hands-on work, backed by evidence.
+**{completed}/30 verified projects** · Visual proof backed by detailed documentation.
 
-A public learning challenge inspired by the daily shipping habit of Ship 30 for 30. Independent project; no affiliation. Any specialty, platform, or experience level is welcome. Each day represents one project slot, not a claim of consecutive calendar-day completion.
+One clear architecture card per completed project. Click a card for real screenshots, build steps, troubleshooting, scripts and test evidence.
 
-[Browse days](#project-gallery) · [How this works](docs/WORKFLOW.md) · [Use this starter](docs/START-HERE.md) · [Evidence standard](docs/EVIDENCE.md)
+[Projects](#verified-projects) · [Challenge](docs/WORKFLOW.md) · [Starter](docs/START-HERE.md) · [Evidence](docs/EVIDENCE.md)
 
-Verified means the documented checks passed against linked implementation evidence. Planned, in-progress, and blocked work remain visible. Placeholder artwork is labeled and is never implementation evidence.
+## Verified projects
 
-## Project gallery
+{gallery}
 
-| Days 01–15 | Days 16–30 |
-| :--- | :--- |
+<details>
+<summary>Upcoming days ({len(pending)}) — planned or in progress</summary>
+
+{upcoming}
+
+</details>
+
+This independent challenge is inspired by Ship 30 for 30; no affiliation. Detailed technical evidence and original screenshots remain in each linked project page.
 '''
-    for i in range(15):
-        readme += '| '+card(projects[i])+' | '+card(projects[i+15])+' |\n'
     result = {ROOT/'README.md': readme}
     for p in projects:
         base = ROOT/'projects'/f'day-{p["day"]:02}'
