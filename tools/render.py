@@ -67,24 +67,17 @@ def outputs(projects):
     upcoming = '\n'.join(card(p) for p in pending)
     readme = f'''# Build 30 for 30
 
-**{completed}/30 verified projects** · 30 IT builds, documented with visual proof and reproducible GUI walkthroughs.
+Practical IT projects, architecture diagrams, results, and manual walkthroughs.
 
 One architecture card per completed build. Open it for the outcome, a manual step-by-step guide with authentic screenshots, and optional technical evidence.
 
-[Projects](#verified-projects) · [Challenge](docs/WORKFLOW.md) · [Starter](docs/START-HERE.md) · [Evidence](docs/EVIDENCE.md)
+[Projects](#projects)
 
-## Verified projects
+## Projects
 
 {gallery}
 
-<details>
-<summary>Upcoming days ({len(pending)}) — planned or in progress</summary>
 
-{upcoming}
-
-</details>
-
-Each day links to its own reproducible walkthrough and original technical evidence.
 '''
     result = {ROOT/'README.md': readme}
     for p in projects:
@@ -102,9 +95,9 @@ Each day links to its own reproducible walkthrough and original technical eviden
 
 **Checks:** {passing}/{total} passed in the recorded implementation. Original evidence is historical, not a new health check.
 
-**Original implementation:** [Build notes](evidence/BUILD-STORY.md) where available, [Recorded artifacts](project.json), [Scripts and screenshots](screenshots/).
+**Evidence:** A selection of original screenshots is included in the manual walkthrough.
 
-**Known problems:** {len(p['problems'])} recorded in the project metadata.
+
 
 **Limitations:** {p['limitations']}
 
@@ -131,7 +124,7 @@ The guide gives numbered GUI clicks, settings, useful original screenshots and e
 
 {p['outcome']}
 
-**Tools:** {', '.join(p['technologies']) or 'Not selected.'}
+**Technologies demonstrated:** {', '.join(x for x in p['technologies'] if x not in ('Ansible', 'Proxmox / QEMU', 'MSAL / GNOME Keyring')) or 'Not selected.'}
 
 {details}
 
