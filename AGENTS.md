@@ -18,4 +18,4 @@ Follow `docs/WORKFLOW.md` and `docs/EVIDENCE.md`. Public repository: do not disc
 
 Read relevant day metadata and source records before editing. Preserve existing projects and NOTES.md. Never infer verified outcomes from plans. Do not rerun or alter lab infrastructure just to maintain the portfolio. Review outputs, evidence, secret scans and diff before committing. Push non-forced and verify the published files.
 
-- Cards use wide landscape SVGs (900×620 viewBox) at up to 760px width. Keep large, readable typography, two or three architecture nodes, one concise outcome sentence, and a single explore link. No results block or small-print diagrams.
+- Cards use wide landscape SVGs (900×530 viewBox) at up to 760px width. Keep large, readable typography, two or three clearly connected architecture nodes, consistent padding, one concise outcome sentence, and a single explore link. No results block or small-print diagrams.
