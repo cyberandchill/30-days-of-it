@@ -104,7 +104,7 @@ This portfolio shows the architecture, problems solved, and verified outcomes be
 **Limitations:** {'This was a controlled lab build; it is not a production deployment.' if p['day'] == 1 else 'This was a controlled lab validation, not a production deployment.'}
 
 </details>"""
-        extra_reference = '[Extended technical reference](GUIDE.md) · [Build history](BUILD-STORY.md)' if p['day'] == 3 else ''
+        extra_reference = '[Extended technical reference](GUIDE.md)' if p['day'] == 3 else ''
         text = f"""# {p['title']}
 
 **{STATUSES[p['status']]}** · [CyberAndChill Portfolio](../../README.md)
