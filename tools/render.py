@@ -156,6 +156,6 @@ def main():
             assert path.read_text() == content, 'Generated file out of date: '+str(path)
         else: path.write_text(content)
     scan()
-    print('PASS: 30 days, evidence references, hashes, status gates, generated content, heuristic secret scan.')
+    print('PASS: portfolio projects, evidence references, hashes, status gates, generated content, heuristic secret scan.')
 
 if __name__ == '__main__': main()
