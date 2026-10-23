@@ -1,0 +1,14 @@
+{
+  "service_certificate_present": true,
+  "staging_mode": false,
+  "verified_at_utc": "2026-10-23T03:12:01.9713455Z",
+  "sync_cycle_enabled": true,
+  "host_reboot_performed": false,
+  "personal_cloud_password_required": false,
+  "service_running": true,
+  "post_reboot_sync_request": "Success",
+  "connector_identity_type": "Application",
+  "dc_boot_utc": "2026-10-23T03:11:00.5000000Z",
+  "dc_interactive_user_absent": true,
+  "service_automatic": true
+}

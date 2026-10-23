@@ -39,6 +39,7 @@ def load():
             local(base, p['visual'])
             assert p['visual'] in paths
         if p['status'] == 'verified':
+            local(ROOT, f'assets/day-{number:02}-card.svg')
             assert p['visual'] and p['tests'] and all(t['result'] == 'pass' for t in p['tests'])
             assert p['steps'] and p['technologies'] and p['skills'] and p['evidence']
         projects.append(p)
@@ -48,38 +49,43 @@ def esc(value):
     return html.escape(str(value)).replace('|', '&#124;').replace('\n', ' ')
 
 def card(p):
-    day = p['day']; prefix = f'projects/day-{day:02}'
-    visual = f'{prefix}/{p["visual"]}' if p['visual'] else 'assets/awaiting-evidence.svg'
-    alt = 'Result visual' if p['visual'] else 'Placeholder — no implementation evidence yet'
-    return (f'<a href="{prefix}/README.md"><img src="{visual}" alt="{alt}" width="380"></a><br>'
-        f'<b>Day {day:02} · {esc(p["title"])}</b><br><b>{STATUSES[p["status"]]}</b><br>'
-        f'{esc(p["built"])}<br><b>Use case:</b> {esc(p["problem"])}<br>'
-        f'<b>Tools:</b> {esc(", ".join(p["technologies"]) or "To be selected")}<br>'
-        f'<b>Skills:</b> {esc(", ".join(p["skills"]) or "To be demonstrated")}<br>'
-        f'<a href="{prefix}/README.md">Read project →</a>')
+    day = p['day']
+    prefix = f'projects/day-{day:02}'
+    if p['status'] == 'verified':
+        return (f'<a href="{prefix}/README.md"><img src="assets/day-{day:02}-card.svg" '
+                f'alt="Day {day:02}: visual project card" width="420"></a>')
+    return f'- [Day {day:02}: {esc(p["title"])} — {STATUSES[p["status"]]}]({prefix}/README.md)'
 
 def bullets(items, empty):
     return '\n'.join('- '+str(x) for x in items) if items else empty
 
 def outputs(projects):
     completed = sum(p['status'] == 'verified' for p in projects)
+    featured = [p for p in projects if p['status'] == 'verified']
+    pending = [p for p in projects if p['status'] != 'verified']
+    gallery = '\n\n'.join(card(p) for p in featured) or '_No verified projects yet._'
+    upcoming = '\n'.join(card(p) for p in pending)
     readme = f'''# 30 Days of IT · Build. Test. Show.
 
-**{completed}/30 verified projects** · Hands-on work, backed by evidence.
+**{completed}/30 verified projects** · Visual proof backed by detailed documentation.
 
-A public learning challenge inspired by the daily shipping habit of Ship 30 for 30. Independent project; no affiliation. Any specialty, platform, or experience level is welcome. Each day represents one project slot, not a claim of consecutive calendar-day completion.
+One clear architecture card per completed project. Click a card for real screenshots, build steps, troubleshooting, scripts and test evidence.
 
-[Browse days](#project-gallery) · [How this works](docs/WORKFLOW.md) · [Use this starter](docs/START-HERE.md) · [Evidence standard](docs/EVIDENCE.md)
+[Projects](#verified-projects) · [Challenge](docs/WORKFLOW.md) · [Starter](docs/START-HERE.md) · [Evidence](docs/EVIDENCE.md)
 
-Verified means the documented checks passed against linked implementation evidence. Planned, in-progress, and blocked work remain visible. Placeholder artwork is labeled and is never implementation evidence.
+## Verified projects
 
-## Project gallery
+{gallery}
 
-| Days 01–15 | Days 16–30 |
-| :--- | :--- |
+<details>
+<summary>Upcoming days ({len(pending)}) — planned or in progress</summary>
+
+{upcoming}
+
+</details>
+
+This independent challenge is inspired by Ship 30 for 30; no affiliation. Detailed technical evidence and original screenshots remain in each linked project page.
 '''
-    for i in range(15):
-        readme += '| '+card(projects[i])+' | '+card(projects[i+15])+' |\n'
     result = {ROOT/'README.md': readme}
     for p in projects:
         base = ROOT/'projects'/f'day-{p["day"]:02}'

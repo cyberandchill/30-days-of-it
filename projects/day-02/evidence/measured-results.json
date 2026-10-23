@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "verified_at_utc": "2026-10-23T03:26:00.973132+00:00",
+  "assertions_passed": 23,
+  "assertions_total": 23,
+  "checks": {
+    "both_owned_guests_running": true,
+    "all_eight_unrelated_guest_configurations_unchanged": true,
+    "private_dc_dns_only": true,
+    "domain_diagnostics_passed": true,
+    "client_secure_channel_and_sysvol": true,
+    "uac_defender_firewall_retained": true,
+    "original_owned_directory_structure_retained": true,
+    "exact_two_ou_sync_scope": true,
+    "active_unsuspended_sync_scheduler": true,
+    "sync_cycle_completed": true,
+    "no_pending_exports": true,
+    "twelve_department_users_synced": true,
+    "privileged_codex_account_kept_cloud_only": true,
+    "hybrid_device_local_join": true,
+    "device_authentication_and_tenant_verified": true,
+    "exact_enabled_cloud_hybrid_device": true,
+    "actual_standard_user_session": true,
+    "standard_user_prt_and_wam": true,
+    "client_join_and_sso_after_restart": true,
+    "service_identity_is_application_certificate": true,
+    "sync_service_returned_after_dc_restart_without_desktop_login": true,
+    "post_reboot_sync_request_succeeded": true,
+    "protected_admin_cache_reused_from_fresh_process": true
+  },
+  "connect_sync_version": "2.6.92.0",
+  "synced_department_users": 12,
+  "sync_identity": "Application with service certificate",
+  "dc_allocation": {
+    "cores": 2,
+    "memory_mib": 6144,
+    "virtual_disk_gib": 80
+  },
+  "client_allocation": {
+    "cores": 2,
+    "memory_mib": 4096,
+    "virtual_disk_gib": 64
+  },
+  "dc_post_configuration_boot_utc": "2026-10-23T03:11:00.5000000Z",
+  "client_post_join_boot_utc": "2026-10-23T03:14:06.5000000Z",
+  "host_reboot_performed": false,
+  "browser_application_sso_tested": false,
+  "licensed_office_access_tested": false,
+  "platform_tested": "Existing Proxmox/QEMU guest environment only; no cross-hypervisor testing claim"
+}
