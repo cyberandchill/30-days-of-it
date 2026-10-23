@@ -1,6 +1,6 @@
-# Day 03 · Jenkins SAML Single Sign-On with Microsoft Entra
+# Jenkins SAML Single Sign-On with Microsoft Entra
 
-**✓ Verified** · [Portfolio](../../README.md)
+[← Technical portfolio](../../README.md) · **Verified implementation**
 
 Integrated an open-source Jenkins application with existing Entra identities through SAML 2.0. **Result:** Ordinary-user SAML login and post-restart login succeeded; administration was denied with HTTP 403.
 
