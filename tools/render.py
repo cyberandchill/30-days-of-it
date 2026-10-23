@@ -48,15 +48,12 @@ def esc(value):
     return html.escape(str(value)).replace('|', '&#124;').replace('\n', ' ')
 
 def card(p):
-    day = p['day']; prefix = f'projects/day-{day:02}'
-    visual = f'{prefix}/{p["visual"]}' if p['visual'] else 'assets/awaiting-evidence.svg'
-    alt = 'Result visual' if p['visual'] else 'Placeholder — no implementation evidence yet'
-    return (f'<a href="{prefix}/README.md"><img src="{visual}" alt="{alt}" width="380"></a><br>'
-        f'<b>Day {day:02} · {esc(p["title"])}</b><br><b>{STATUSES[p["status"]]}</b><br>'
-        f'{esc(p["built"])}<br><b>Use case:</b> {esc(p["problem"])}<br>'
-        f'<b>Tools:</b> {esc(", ".join(p["technologies"]) or "To be selected")}<br>'
-        f'<b>Skills:</b> {esc(", ".join(p["skills"]) or "To be demonstrated")}<br>'
-        f'<a href="{prefix}/README.md">Read project →</a>')
+    day = p['day']
+    prefix = f'projects/day-{day:02}'
+    if p['status'] == 'verified':
+        return (f'<a href="{prefix}/README.md"><img src="assets/day-{day:02}-card.svg" '
+                f'alt="Day {day:02}: visual project card" width="420"></a>')
+    return f'- [Day {day:02}: {esc(p["title"])} — {STATUSES[p["status"]]}]({prefix}/README.md)'
 
 def bullets(items, empty):
     return '\n'.join('- '+str(x) for x in items) if items else empty
