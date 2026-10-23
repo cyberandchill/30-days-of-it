@@ -73,6 +73,8 @@ I build and validate practical IT environments that demonstrate how enterprise t
 
 This portfolio shows the architecture, problems solved, and verified outcomes behind each project. Open a project to explore its results, screenshots, and a step-by-step manual walkthrough.
 
+**Connect:** [X / Twitter](https://x.com/cyberandchill) · [Website](https://cyberandchill.com) · [GitHub](https://github.com/cyberandchill)
+
 ## Selected projects
 
 {gallery}
