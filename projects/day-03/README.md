@@ -4,7 +4,7 @@
 
 Integrated an open-source Jenkins application with existing Entra identities through SAML 2.0. **Result:** Ordinary-user SAML login and post-restart login succeeded; administration was denied with HTTP 403.
 
-[**Follow the standalone manual GUI walkthrough →**](GUIDE.md) · [Supporting build history](BUILD-STORY.md)
+[**Follow the concise manual setup guide →**](MANUAL-SETUP.md) · [Full technical reference](GUIDE.md) · [Supporting build history](BUILD-STORY.md)
 
 Build a local Jenkins application that accepts an existing Microsoft Entra identity through SAML 2.0. The ordinary user can read Jenkins but cannot administer it. The demonstrated identity was synchronized from Active Directory; the application's Windows host was already hybrid joined.
 
