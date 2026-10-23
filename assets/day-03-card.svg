@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="850" viewBox="0 0 760 850"><title>Day 03 - Jenkins SAML Sign-In</title><desc>Microsoft Entra sends a signed response through the browser to Jenkins. Ordinary-user sign-in and administration denial verified.</desc><style>text{font-family:Arial,Helvetica,sans-serif}.k{font-size:16px;font-weight:700;letter-spacing:.9px;fill:#53715a}.title{font-size:41px;font-weight:700;fill:#183225}.sub{font-size:20px;fill:#4d6554}.node{font-size:25px;font-weight:700;text-anchor:middle;fill:#183a29}.fine{font-size:18px;text-anchor:middle;fill:#597061}.out{font-size:23px;fill:#2c4735}.more{font-size:19px;font-weight:700;fill:#285f3e}.label{font-size:19px;font-weight:700;text-anchor:middle;fill:#476a53}</style>
+<rect width="760" height="850" rx="24" fill="#f9faf7"/>
+<text x="35" y="43" class="k">CYBERANDCHILL / PROJECT</text><text x="725" y="43" text-anchor="end" class="k">DAY 03</text>
+<path d="M35 63H725" stroke="#d8e0d9" stroke-width="2"/>
+<text x="35" y="127" class="title">Jenkins SAML Sign-In</text><text x="35" y="169" class="sub">Jenkins · Microsoft Entra · SAML 2.0</text>
+<rect x="30" y="208" width="700" height="489" rx="20" fill="#e9f1e9"/>
+<rect x="184" y="250" width="392" height="100" rx="14" fill="white" stroke="#a7bda9" stroke-width="2"/>
+<text x="380" y="294" class="node">Microsoft Entra</text><text x="380" y="327" class="fine">Identity provider</text>
+<path d="M380 350V421 M368 407L380 421L392 407" stroke="#527c61" stroke-width="4" fill="none"/>
+<text x="531" y="390" class="label">Signed SAML</text>
+<rect x="184" y="428" width="392" height="100" rx="14" fill="white" stroke="#a7bda9" stroke-width="2"/>
+<text x="380" y="472" class="node">User's browser</text><text x="380" y="505" class="fine">Carries the response</text>
+<path d="M380 528V599 M368 585L380 599L392 585" stroke="#527c61" stroke-width="4" fill="none"/>
+<text x="540" y="569" class="label">HTTPS POST</text>
+<rect x="184" y="606" width="392" height="70" rx="14" fill="white" stroke="#a7bda9" stroke-width="2"/>
+<text x="380" y="636" class="node">Jenkins</text><text x="380" y="663" class="fine">Service provider · validates assertion</text>
+<text x="35" y="737" class="out">Existing identity signs in to Jenkins.</text><text x="35" y="769" class="out">Read access allowed; admin access denied.</text>
+<path d="M35 787H725" stroke="#d8e0d9" stroke-width="2"/>
+<a href="https://github.com/cyberandchill/cyberandchill-portfolio/blob/main/projects/day-03/README.md"><text x="722" y="825" text-anchor="end" class="more">VIEW PROJECT →</text></a></svg>

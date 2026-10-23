@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="660" viewBox="0 0 1000 660"><title>SAML browser flow: Jenkins and Microsoft Entra</title><desc>Six browser-mediated steps, from protected request to the authorized application session. Conceptual diagram, not a screenshot.</desc><defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="#527c61"/></marker></defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#183225}.node{font-size:24px;font-weight:bold;text-anchor:middle}.label{font-size:19px;text-anchor:middle}.small{font-size:17px;text-anchor:middle}.flow{stroke:#527c61;stroke-width:3;marker-end:url(#arrow)}</style><rect width="1000" height="660" fill="#f9faf7" rx="20"/>
+<rect x="50" y="35" width="260" height="90" rx="12" fill="#e9f1e9"/><text x="180" y="75" class="node">Browser</text><text x="180" y="104" class="small">On the application computer</text>
+<rect x="370" y="35" width="260" height="90" rx="12" fill="#e9f1e9"/><text x="500" y="75" class="node">Jenkins</text><text x="500" y="104" class="small">SAML service provider</text>
+<rect x="700" y="35" width="260" height="90" rx="12" fill="#e9f1e9"/><text x="830" y="75" class="node">Microsoft Entra</text><text x="830" y="104" class="small">Identity provider</text>
+<path d="M180 125V580 M500 125V580 M830 125V580" stroke="#b8c7bb" stroke-dasharray="6 6"/>
+<text x="340" y="174" class="label">1. Open protected app</text><path d="M180 190H495" class="flow"/>
+<text x="340" y="234" class="label">2. Redirect + SAMLRequest</text><path d="M500 250H185" class="flow"/>
+<text x="505" y="294" class="label">3. Authenticate with existing identity</text><path d="M180 310H825" class="flow"/>
+<text x="505" y="369" class="label">4. Signed SAMLResponse returned to browser</text><path d="M830 385H185" class="flow"/>
+<text x="340" y="439" class="label">5. HTTPS POST to ACS</text><path d="M180 455H495" class="flow"/>
+<text x="340" y="519" class="label">6. Authorized app session</text><path d="M500 535H185" class="flow"/>
+<text x="500" y="611" class="small">Jenkins checks signature, issuer, audience, destination, time and correlation.</text><text x="500" y="638" class="small">Existing directory synchronization precedes this application flow.</text></svg>

@@ -1,0 +1,52 @@
+{
+  "source_date": "2026-10-23",
+  "historical_not_new_execution": true,
+  "protocol": {
+    "request_redirect_observed": true,
+    "request_acs_matches": true,
+    "request_issuer_matches": true,
+    "response_binding_requested": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST",
+    "response_post_observed": true,
+    "response_success": true,
+    "response_destination_matches": true,
+    "request_response_correlated": true,
+    "assertion_audience_matches": true,
+    "assertion_issuer_matches": true,
+    "assertion_time_window_valid": true,
+    "assertion_signature_present": true,
+    "assertion_signature_cryptographically_valid": true,
+    "signed_username_claim_matches": true,
+    "name_id_format": "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified"
+  },
+  "protocol_captured_utc": "2026-10-23T15:09:37.7857863Z",
+  "application": {
+    "authenticated": true,
+    "expected_standard_user": true,
+    "anonymous": false,
+    "admin_page_http_status": 403,
+    "dashboard_present": true
+  },
+  "application_captured_utc": "2026-10-23T15:10:30.141Z",
+  "negative": {
+    "fresh_session_anonymous": true,
+    "protected_api_http_status": 403,
+    "unauthenticated_protected_api_denied": true,
+    "synthetic_unsigned_unsolicited_response_http_status": 302,
+    "synthetic_response_did_not_authenticate": true
+  },
+  "negative_captured_utc": "2026-10-23T15:08:12.0754383Z",
+  "restart_login_verified": true,
+  "name_id_note": "Opaque NameID; configured signed name claim matched the intended ordinary user.",
+  "negative_scope": "Synthetic unsigned unsolicited response; does not isolate signature validation from request correlation; not a replay test.",
+  "not_tested": [
+    "Full fresh manual replay",
+    "Entra GUI sequence",
+    "Separate administrator browser login",
+    "Real unassigned-user login",
+    "Replay resistance",
+    "Certificate rollover",
+    "MFA-policy changes",
+    "Federated logout",
+    "Windows or host reboot"
+  ]
+}
