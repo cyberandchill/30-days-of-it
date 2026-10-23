@@ -16,7 +16,7 @@ Reuse a synchronized identity for application sign-in while keeping application 
 
 ## Rebuild it yourself
 
-[**Follow the manual GUI walkthrough →**](MANUAL-SETUP.md)
+[**Follow the manual GUI walkthrough →**](GUIDE.md)
 
 The guide gives numbered GUI clicks, settings, useful original screenshots and expected results. An extended technical reference is available when needed.
 
