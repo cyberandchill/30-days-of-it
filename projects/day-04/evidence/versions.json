@@ -1,0 +1,23 @@
+{
+  "captured_utc": "2026-10-24T14:26:07.621789+00:00",
+  "python": "3.14.4",
+  "scikit_learn": "1.7.2",
+  "ollama": {
+    "version": "0.40.10"
+  },
+  "midpoint": "4.10.5",
+  "keycloak": "26.6.1",
+  "connector": {
+    "repository": "openstandia/connector-keycloak",
+    "commit": "6ac6fade61873a50bbb64568162a7d0da01e5de1",
+    "archive_sha256": "dd5c644ac2b53e3f717e2c260b8158fe97d95e8fa306ad4f56aefe57db3d924a"
+  },
+  "postgresql": "16",
+  "ad_connector": "3.9.4",
+  "keycloak_connector_version": "2.0.1-SNAPSHOT",
+  "model": {
+    "name": "qwen2.5:0.5b",
+    "digest": "a8b0c51577010a279d933d14c2a8ab4b268079d44c5c8830c0a93900f1827c67"
+  },
+  "licensing": "AD requires an existing appropriately licensed or evaluation Windows Server environment; other listed identity/analysis components use their respective open-source licenses. Check model and connector license terms before redistribution."
+}

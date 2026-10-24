@@ -1,0 +1,562 @@
+[
+  {
+    "path": "screenshots/02-provisioned-employee-session.png",
+    "captured": "2026-10-24T13:38:32.227210+00:00",
+    "original_sha256": "b924d7af204ab5e0324ca44f1c01f1465a15a9e33723ccdfed75ba473c5ea35e",
+    "sha256": "ce70cf9290b9a9db5a9c94300f77a0e176e3def61677c01f6285d4768897c79e",
+    "redactions": [
+      {
+        "rectangle": [
+          324,
+          201,
+          417,
+          225
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          897,
+          243,
+          1119,
+          265
+        ],
+        "reason": "Additional identifier mask following OCR review"
+      }
+    ],
+    "source": "Authentic automated Chromium capture; separate privacy masks; original retained privately.",
+    "public_reviewed": true,
+    "description": "Actual application/native identity console; synthetic identity labels masked."
+  },
+  {
+    "path": "screenshots/03-authorized-it-application.png",
+    "captured": "2026-10-24T13:38:32.792787+00:00",
+    "original_sha256": "3fceecac885dbe5fb897596096a64b9af95b84d0289c0f5304b565a4e5b1199e",
+    "sha256": "19464c40932682c9985a60f056abbaae2f8c43d98fb31175023233cad55c2227",
+    "redactions": [
+      {
+        "rectangle": [
+          219,
+          202,
+          307,
+          224
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      }
+    ],
+    "source": "Authentic automated Chromium capture; separate privacy masks; original retained privately.",
+    "public_reviewed": true,
+    "description": "Actual application/native identity console; synthetic identity labels masked."
+  },
+  {
+    "path": "screenshots/04-cross-department-access-denied.png",
+    "captured": "2026-10-24T13:38:33.347107+00:00",
+    "original_sha256": "c2a6e824605f5be501be79f144fc09a36bb0a4b13a6e6a6669eb19833b4224bf",
+    "sha256": "1d3020e3aa6d61175b146df2d1c88e36f8fa7d75246ceca9e774024af9447ed8",
+    "redactions": [
+      {
+        "rectangle": [
+          223,
+          200,
+          311,
+          222
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      }
+    ],
+    "source": "Authentic automated Chromium capture; separate privacy masks; original retained privately.",
+    "public_reviewed": true,
+    "description": "Actual application/native identity console; synthetic identity labels masked."
+  },
+  {
+    "path": "screenshots/05-native-approval-cases-pending.png",
+    "captured": "2026-10-24T13:48:04.843429+00:00",
+    "original_sha256": "1f6e754bf0b82b6612929b91b6bbdbc3d3da0b005cdb0c3f79f0721a8ad591b3",
+    "sha256": "db7acd9ee9725f5aaee94f2382af9847d1edd79bc4a500ea3e0dfcc012913097",
+    "redactions": [
+      {
+        "rectangle": [
+          770,
+          210,
+          875,
+          435
+        ],
+        "reason": "Complete identity cells masked after visual review found an OCR-missed identifier fragment"
+      },
+      {
+        "rectangle": [
+          365,
+          241,
+          460,
+          258
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          365,
+          362,
+          460,
+          379
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          773,
+          217,
+          861,
+          234
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          773,
+          265,
+          824,
+          285
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          773,
+          289,
+          815,
+          309
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          773,
+          338,
+          861,
+          355
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          773,
+          386,
+          824,
+          406
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          520,
+          238,
+          617,
+          262
+        ],
+        "reason": "Additional identifier mask following OCR review"
+      },
+      {
+        "rectangle": [
+          509,
+          359,
+          617,
+          383
+        ],
+        "reason": "Additional identifier mask following OCR review"
+      }
+    ],
+    "source": "Authentic automated Chromium capture; separate privacy masks; original retained privately.",
+    "public_reviewed": true,
+    "description": "Actual application/native identity console; synthetic identity labels masked."
+  },
+  {
+    "path": "screenshots/06-elevated-access-denied-before-approval.png",
+    "captured": "2026-10-24T13:48:06.626199+00:00",
+    "original_sha256": "30d72d2b77e144f1a019a479ec96c7e3b30f5af3311a158e07f32ebc11cc52b1",
+    "sha256": "618ce92e609029f683b2db70fd0f1bd4dc7737caf53c212a1d9fd8b33ac42061",
+    "redactions": [
+      {
+        "rectangle": [
+          223,
+          200,
+          314,
+          222
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      }
+    ],
+    "source": "Authentic automated Chromium capture; separate privacy masks; original retained privately.",
+    "public_reviewed": true,
+    "description": "Actual application/native identity console; synthetic identity labels masked."
+  },
+  {
+    "path": "screenshots/07-elevated-access-after-approval.png",
+    "captured": "2026-10-24T13:50:54.789064+00:00",
+    "original_sha256": "7ff193d7685942c910d8a890073c3ca37d99d0d476a678064d93e5195adebace",
+    "sha256": "9f1d246040c6f554454413387ff168f7c2080dad3b7dfa461aa3edbfad27ca48",
+    "redactions": [
+      {
+        "rectangle": [
+          219,
+          202,
+          310,
+          224
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      }
+    ],
+    "source": "Authentic automated Chromium capture; separate privacy masks; original retained privately.",
+    "public_reviewed": true,
+    "description": "Actual application/native identity console; synthetic identity labels masked."
+  },
+  {
+    "path": "screenshots/08-elevated-access-after-rejection.png",
+    "captured": "2026-10-24T13:50:56.567319+00:00",
+    "original_sha256": "0742057b145e6e5ab3c8d4db67aaf73c7a9a4fda9f8ffc98fac86b8246a4fe22",
+    "sha256": "bc602c6233e8c932b8fef2b4b2b2a2d558da8b6d3c8f989ecfb9e7a81a4cc146",
+    "redactions": [
+      {
+        "rectangle": [
+          222,
+          200,
+          313,
+          222
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      }
+    ],
+    "source": "Authentic automated Chromium capture; separate privacy masks; original retained privately.",
+    "public_reviewed": true,
+    "description": "Actual application/native identity console; synthetic identity labels masked."
+  },
+  {
+    "path": "screenshots/09-recovered-operations-employee-application.png",
+    "captured": "2026-10-24T14:02:53.244765+00:00",
+    "original_sha256": "74dc641f53a4d09aa64f6da2d48438127657b64cf98761518606ee71ba9ed76e",
+    "sha256": "2e99b9feb3d411249823fced409949d4420252b2c027d28cfe0d7f61ca2544c2",
+    "redactions": [
+      {
+        "rectangle": [
+          219,
+          202,
+          310,
+          224
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      }
+    ],
+    "source": "Authentic automated Chromium capture; separate privacy masks; original retained privately.",
+    "public_reviewed": true,
+    "description": "Actual application/native identity console; synthetic identity labels masked."
+  },
+  {
+    "path": "screenshots/11-native-connected-resources.png",
+    "captured": "2026-10-24T14:08:31.148160+00:00",
+    "original_sha256": "d8e1768232239cc5b071c62d0b40e83d7e26964e0adfe1abb2ece93ef7a291f8",
+    "sha256": "9b3dbfe34b896e29aeec327fdbf0b3ab7f140f128b13c343d5d14fda16c392e7",
+    "redactions": [],
+    "source": "Authentic automated Chromium capture; separate privacy masks; original retained privately.",
+    "public_reviewed": true,
+    "description": "Actual application/native identity console; synthetic identity labels masked."
+  },
+  {
+    "path": "screenshots/13-native-keycloak-enterprise-users.png",
+    "captured": "2026-10-24T14:21:43.461166+00:00",
+    "original_sha256": "28c58ebb3124badb954f93bcbf6dd2def2b5cac8da35d72e6b7813b654f00a1b",
+    "sha256": "21e4044a63c6a6a3de28db6874873d1d9aed15637458bcfe08c4b2fbd859a58a",
+    "redactions": [
+      {
+        "rectangle": [
+          1217,
+          54,
+          1319,
+          75
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          348,
+          382,
+          421,
+          401
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          560,
+          371,
+          688,
+          405
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          1163,
+          382,
+          1243,
+          398
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          348,
+          426,
+          424,
+          445
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          560,
+          416,
+          698,
+          450
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          1163,
+          426,
+          1246,
+          442
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          348,
+          462,
+          425,
+          493
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          560,
+          470,
+          700,
+          489
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          1163,
+          470,
+          1247,
+          486
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          348,
+          514,
+          426,
+          533
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          560,
+          514,
+          701,
+          533
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          1163,
+          514,
+          1248,
+          530
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          348,
+          558,
+          425,
+          577
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          560,
+          548,
+          698,
+          582
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          1163,
+          548,
+          1252,
+          582
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          344,
+          591,
+          425,
+          628
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          560,
+          602,
+          744,
+          621
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          1163,
+          602,
+          1247,
+          618
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          348,
+          646,
+          425,
+          665
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          560,
+          635,
+          742,
+          669
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          1163,
+          646,
+          1247,
+          662
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          348,
+          690,
+          425,
+          709
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          560,
+          690,
+          637,
+          709
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          1163,
+          680,
+          1252,
+          714
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          344,
+          723,
+          425,
+          760
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          560,
+          734,
+          744,
+          753
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          1163,
+          734,
+          1247,
+          750
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          348,
+          778,
+          421,
+          797
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          560,
+          778,
+          696,
+          797
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      },
+      {
+        "rectangle": [
+          1163,
+          778,
+          1243,
+          794
+        ],
+        "reason": "Synthetic account/realm identifier masked"
+      }
+    ],
+    "source": "Authentic automated Chromium capture; separate privacy masks; original retained privately.",
+    "public_reviewed": true,
+    "description": "Actual application/native identity console; synthetic identity labels masked."
+  },
+  {
+    "path": "screenshots/16-recorded-ai-advisory-analysis.png",
+    "captured": "2026-10-24T14:35:39.917818+00:00",
+    "original_sha256": "7a6ef07a6d6522a813d29a4b2aa9ee1a5a6267445abef1f0719a2f09521536b0",
+    "sha256": "21052eac8bb681cdf9346ab6f7f3f0dc6d1a619fa277ea00826a6d26ee7c2c1b",
+    "redactions": [],
+    "source": "Authentic automated Chromium capture; separate privacy masks; original retained privately.",
+    "public_reviewed": true,
+    "description": "Selected fields from a recorded actual recommendation response, displayed in a clearly labeled browser data view; not a fresh model run."
+  }
+]

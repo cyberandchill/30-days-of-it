@@ -1,17 +1,291 @@
 {
   "day": 4,
-  "title": "Project to be selected",
-  "status": "planned",
-  "built": "No implementation recorded yet.",
-  "problem": "Use case to be selected.",
-  "technologies": [],
-  "skills": [],
-  "objective": "To be defined for this day.",
-  "outcome": "Not implemented or verified.",
-  "steps": [],
-  "tests": [],
-  "problems": [],
-  "evidence": [],
-  "visual": "",
-  "limitations": "No completed work claimed."
+  "title": "AI-Assisted Employee Onboarding",
+  "status": "verified",
+  "built": "Integrated midPoint, Active Directory and Keycloak with local peer-based access recommendations and Ollama explanations; native policy and approvals control every grant.",
+  "problem": "Reduce incorrect onboarding recommendations while preserving deterministic least-privilege enforcement and independent approval.",
+  "technologies": [
+    "midPoint",
+    "Active Directory",
+    "Keycloak",
+    "Ollama",
+    "Python",
+    "scikit-learn",
+    "OIDC"
+  ],
+  "skills": [
+    "Identity governance",
+    "Lifecycle provisioning",
+    "Access recommendations",
+    "Approval workflows",
+    "Reconciliation",
+    "Authorization testing"
+  ],
+  "objective": "Validate a complete HR-to-directory-to-application onboarding workflow using synthetic enterprise data.",
+  "outcome": "All 20 hires were provisioned and passed AD authentication, browser sign-in, allowed department access and denied cross-department access. Approval/rejection, duplicate replay and live partial-failure recovery passed. On this controlled fixture, recommendation accuracy increased from 89% to 100%; both policy-enforced paths had zero excessive grants.",
+  "steps": [
+    "Follow the [conventional setup guide](GUIDE.md).",
+    "Use the [extended reference](REFERENCE.md) for native configuration, integration contract and measurement limits."
+  ],
+  "tests": [
+    {
+      "check": "Historical enterprise employees in both targets",
+      "expected": "100",
+      "observed": "100",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "Valid hires provisioned with exact independent expected access",
+      "expected": "20",
+      "observed": "20",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "Actual AD authentication",
+      "expected": "20",
+      "observed": "20",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "Actual browser OIDC authentication",
+      "expected": "20",
+      "observed": "20",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "Allowed department application responses",
+      "expected": "20 HTTP 200",
+      "observed": "20 HTTP 200",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "Denied cross-department responses",
+      "expected": "20 HTTP 403",
+      "observed": "20 HTTP 403",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "Idempotent onboarding replays",
+      "expected": "20",
+      "observed": "20",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "Negative input and authorization enforcement",
+      "expected": "17",
+      "observed": "17",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "Native pending/approval/rejection separation",
+      "expected": "No preapproval grants; requester 403; distinct reviewer decisions; browser 200/403",
+      "observed": "Passed; 3 separate reviewer decisions recorded",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    },
+    {
+      "check": "Real partial-target outage and native recovery",
+      "expected": "503 with existing AD identity; recovery creates/links correct Keycloak identity",
+      "observed": "complete",
+      "result": "pass",
+      "evidence": "evidence/measured-results.json"
+    }
+  ],
+  "problems": [
+    "Native group references and explicitly fetched Keycloak groups were necessary for correct reconciliation.",
+    "Approval rules needed explicit assignment-level scope; actual target revocation and pending-state denial were verified.",
+    "An exact role-ID allowlist prevents administrative roles from entering the request catalog."
+  ],
+  "evidence": [
+    {
+      "path": "GUIDE.md",
+      "caption": "Reviewed conventional reference or selected recorded evidence; not a fresh implementation run.",
+      "captured": "2026-10-24T14:08:46.910717+00:00",
+      "source": "Derived from actual recorded implementation; originals retained separately. Diagrams and examples are explanatory.",
+      "sha256": "f96fdd3d11baa968f50ab300a7ab28d49526c261e80006ba2aff1a61a65b2c00",
+      "public_reviewed": true
+    },
+    {
+      "path": "REFERENCE.md",
+      "caption": "Reviewed conventional reference or selected recorded evidence; not a fresh implementation run.",
+      "captured": "2026-10-24T14:08:46.910717+00:00",
+      "source": "Derived from actual recorded implementation; originals retained separately. Diagrams and examples are explanatory.",
+      "sha256": "a76fc635b3d711675c90dc253f7af5d7f8a48fff395be74989e0343ebf2fe914",
+      "public_reviewed": true
+    },
+    {
+      "path": "configs/.gitkeep",
+      "caption": "Reviewed conventional reference or selected recorded evidence; not a fresh implementation run.",
+      "captured": "2026-10-24T14:08:46.910717+00:00",
+      "source": "Derived from actual recorded implementation; originals retained separately. Diagrams and examples are explanatory.",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_reviewed": true
+    },
+    {
+      "path": "diagrams/.gitkeep",
+      "caption": "Reviewed conventional reference or selected recorded evidence; not a fresh implementation run.",
+      "captured": "2026-10-24T14:08:46.910717+00:00",
+      "source": "Derived from actual recorded implementation; originals retained separately. Diagrams and examples are explanatory.",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_reviewed": true
+    },
+    {
+      "path": "diagrams/onboarding.svg",
+      "caption": "Reviewed conventional reference or selected recorded evidence; not a fresh implementation run.",
+      "captured": "2026-10-24T14:08:46.910717+00:00",
+      "source": "Derived from actual recorded implementation; originals retained separately. Diagrams and examples are explanatory.",
+      "sha256": "d737d49c10e74dea300b7b4b38284bd519749b12907cb258a0d1286df0619108",
+      "public_reviewed": true
+    },
+    {
+      "path": "evidence/.gitkeep",
+      "caption": "Reviewed conventional reference or selected recorded evidence; not a fresh implementation run.",
+      "captured": "2026-10-24T14:08:46.910717+00:00",
+      "source": "Derived from actual recorded implementation; originals retained separately. Diagrams and examples are explanatory.",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_reviewed": true
+    },
+    {
+      "path": "evidence/image-provenance.json",
+      "caption": "Reviewed conventional reference or selected recorded evidence; not a fresh implementation run.",
+      "captured": "2026-10-24T14:08:46.910717+00:00",
+      "source": "Derived from actual recorded implementation; originals retained separately. Diagrams and examples are explanatory.",
+      "sha256": "f0e8955a52b13c1d873e3e718d5a68cc11c4db1bb41760067d14375e08076a68",
+      "public_reviewed": true
+    },
+    {
+      "path": "evidence/measured-results.json",
+      "caption": "Reviewed conventional reference or selected recorded evidence; not a fresh implementation run.",
+      "captured": "2026-10-24T14:08:46.910717+00:00",
+      "source": "Derived from actual recorded implementation; originals retained separately. Diagrams and examples are explanatory.",
+      "sha256": "9d143ec29bb3021bb10b6256fc5627a988a823fb8b019e1423c1d974c9ef351d",
+      "public_reviewed": true
+    },
+    {
+      "path": "evidence/versions.json",
+      "caption": "Reviewed conventional reference or selected recorded evidence; not a fresh implementation run.",
+      "captured": "2026-10-24T14:08:46.910717+00:00",
+      "source": "Derived from actual recorded implementation; originals retained separately. Diagrams and examples are explanatory.",
+      "sha256": "8f4e4790d8db255cb0953d295ae84ef92f20a94aea82833045f035c404ae4f79",
+      "public_reviewed": true
+    },
+    {
+      "path": "screenshots/.gitkeep",
+      "caption": "Reviewed conventional reference or selected recorded evidence; not a fresh implementation run.",
+      "captured": "2026-10-24T14:08:46.910717+00:00",
+      "source": "Derived from actual recorded implementation; originals retained separately. Diagrams and examples are explanatory.",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_reviewed": true
+    },
+    {
+      "path": "screenshots/02-provisioned-employee-session.png",
+      "caption": "Actual application/native identity console; synthetic identity labels masked.",
+      "captured": "2026-10-24T13:38:32.227210+00:00",
+      "source": "Authentic automated Chromium capture; separate privacy masks; original retained privately.",
+      "sha256": "ce70cf9290b9a9db5a9c94300f77a0e176e3def61677c01f6285d4768897c79e",
+      "public_reviewed": true
+    },
+    {
+      "path": "screenshots/03-authorized-it-application.png",
+      "caption": "Actual application/native identity console; synthetic identity labels masked.",
+      "captured": "2026-10-24T13:38:32.792787+00:00",
+      "source": "Authentic automated Chromium capture; separate privacy masks; original retained privately.",
+      "sha256": "19464c40932682c9985a60f056abbaae2f8c43d98fb31175023233cad55c2227",
+      "public_reviewed": true
+    },
+    {
+      "path": "screenshots/04-cross-department-access-denied.png",
+      "caption": "Actual application/native identity console; synthetic identity labels masked.",
+      "captured": "2026-10-24T13:38:33.347107+00:00",
+      "source": "Authentic automated Chromium capture; separate privacy masks; original retained privately.",
+      "sha256": "1d3020e3aa6d61175b146df2d1c88e36f8fa7d75246ceca9e774024af9447ed8",
+      "public_reviewed": true
+    },
+    {
+      "path": "screenshots/05-native-approval-cases-pending.png",
+      "caption": "Actual application/native identity console; synthetic identity labels masked.",
+      "captured": "2026-10-24T13:48:04.843429+00:00",
+      "source": "Authentic automated Chromium capture; separate privacy masks; original retained privately.",
+      "sha256": "db7acd9ee9725f5aaee94f2382af9847d1edd79bc4a500ea3e0dfcc012913097",
+      "public_reviewed": true
+    },
+    {
+      "path": "screenshots/06-elevated-access-denied-before-approval.png",
+      "caption": "Actual application/native identity console; synthetic identity labels masked.",
+      "captured": "2026-10-24T13:48:06.626199+00:00",
+      "source": "Authentic automated Chromium capture; separate privacy masks; original retained privately.",
+      "sha256": "618ce92e609029f683b2db70fd0f1bd4dc7737caf53c212a1d9fd8b33ac42061",
+      "public_reviewed": true
+    },
+    {
+      "path": "screenshots/07-elevated-access-after-approval.png",
+      "caption": "Actual application/native identity console; synthetic identity labels masked.",
+      "captured": "2026-10-24T13:50:54.789064+00:00",
+      "source": "Authentic automated Chromium capture; separate privacy masks; original retained privately.",
+      "sha256": "9f1d246040c6f554454413387ff168f7c2080dad3b7dfa461aa3edbfad27ca48",
+      "public_reviewed": true
+    },
+    {
+      "path": "screenshots/08-elevated-access-after-rejection.png",
+      "caption": "Actual application/native identity console; synthetic identity labels masked.",
+      "captured": "2026-10-24T13:50:56.567319+00:00",
+      "source": "Authentic automated Chromium capture; separate privacy masks; original retained privately.",
+      "sha256": "bc602c6233e8c932b8fef2b4b2b2a2d558da8b6d3c8f989ecfb9e7a81a4cc146",
+      "public_reviewed": true
+    },
+    {
+      "path": "screenshots/09-recovered-operations-employee-application.png",
+      "caption": "Actual application/native identity console; synthetic identity labels masked.",
+      "captured": "2026-10-24T14:02:53.244765+00:00",
+      "source": "Authentic automated Chromium capture; separate privacy masks; original retained privately.",
+      "sha256": "2e99b9feb3d411249823fced409949d4420252b2c027d28cfe0d7f61ca2544c2",
+      "public_reviewed": true
+    },
+    {
+      "path": "screenshots/11-native-connected-resources.png",
+      "caption": "Actual application/native identity console; synthetic identity labels masked.",
+      "captured": "2026-10-24T14:08:31.148160+00:00",
+      "source": "Authentic automated Chromium capture; separate privacy masks; original retained privately.",
+      "sha256": "9b3dbfe34b896e29aeec327fdbf0b3ab7f140f128b13c343d5d14fda16c392e7",
+      "public_reviewed": true
+    },
+    {
+      "path": "screenshots/13-native-keycloak-enterprise-users.png",
+      "caption": "Actual application/native identity console; synthetic identity labels masked.",
+      "captured": "2026-10-24T14:21:43.461166+00:00",
+      "source": "Authentic automated Chromium capture; separate privacy masks; original retained privately.",
+      "sha256": "21e4044a63c6a6a3de28db6874873d1d9aed15637458bcfe08c4b2fbd859a58a",
+      "public_reviewed": true
+    },
+    {
+      "path": "screenshots/16-recorded-ai-advisory-analysis.png",
+      "caption": "Selected fields from a recorded actual recommendation response, displayed in a clearly labeled browser data view; not a fresh model run.",
+      "captured": "2026-10-24T14:35:39.917818+00:00",
+      "source": "Authentic automated Chromium capture; separate privacy masks; original retained privately.",
+      "sha256": "21052eac8bb681cdf9346ab6f7f3f0dc6d1a619fa277ea00826a6d26ee7c2c1b",
+      "public_reviewed": true
+    },
+    {
+      "path": "scripts/.gitkeep",
+      "caption": "Reviewed conventional reference or selected recorded evidence; not a fresh implementation run.",
+      "captured": "2026-10-24T14:08:46.910717+00:00",
+      "source": "Derived from actual recorded implementation; originals retained separately. Diagrams and examples are explanatory.",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_reviewed": true
+    }
+  ],
+  "visual": "diagrams/onboarding.svg",
+  "limitations": "Controlled synthetic workload with deliberately matching peer categories and coarse RBAC baseline. No production speedup, human review-time saving or broader model generalization established. Full independent manual replay remains untested; original integration is not distributed.",
+  "overview_limitations": "Controlled synthetic workload; AI added latency. Human review-time savings, broader generalization and a complete fresh manual replay were not established. The original integration is not distributed; conventional configuration and adapter requirements are documented.",
+  "manual_guide": "GUIDE.md",
+  "extended_reference": "REFERENCE.md",
+  "gallery_alt": "AI-assisted employee onboarding architecture"
 }

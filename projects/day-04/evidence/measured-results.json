@@ -1,0 +1,125 @@
+{
+  "completed_utc": "2026-10-24T14:08:46.910717+00:00",
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "Historical enterprise employees in both targets",
+      "expected": 100,
+      "observed": 100,
+      "pass": true
+    },
+    {
+      "check": "Valid hires provisioned with exact independent expected access",
+      "expected": 20,
+      "observed": 20,
+      "pass": true
+    },
+    {
+      "check": "Actual AD authentication",
+      "expected": 20,
+      "observed": 20,
+      "pass": true
+    },
+    {
+      "check": "Actual browser OIDC authentication",
+      "expected": 20,
+      "observed": 20,
+      "pass": true
+    },
+    {
+      "check": "Allowed department application responses",
+      "expected": "20 HTTP 200",
+      "observed": "20 HTTP 200",
+      "pass": true
+    },
+    {
+      "check": "Denied cross-department responses",
+      "expected": "20 HTTP 403",
+      "observed": "20 HTTP 403",
+      "pass": true
+    },
+    {
+      "check": "Idempotent onboarding replays",
+      "expected": 20,
+      "observed": 20,
+      "pass": true
+    },
+    {
+      "check": "Negative input and authorization enforcement",
+      "expected": 17,
+      "observed": 17,
+      "pass": true
+    },
+    {
+      "check": "Native pending/approval/rejection separation",
+      "expected": "No preapproval grants; requester 403; distinct reviewer decisions; browser 200/403",
+      "observed": "Passed; 3 separate reviewer decisions recorded",
+      "pass": true
+    },
+    {
+      "check": "Real partial-target outage and native recovery",
+      "expected": "503 with existing AD identity; recovery creates/links correct Keycloak identity",
+      "observed": "complete",
+      "pass": true
+    }
+  ],
+  "procedure_status": "Automated API/GUI execution; complete conventional manual rebuild not independently replayed",
+  "source": "Actual target inspection, independent frozen expected-access labels, native cases, live outage, real browser/LDAP authentication",
+  "comparison": {
+    "baseline": {
+      "true_positives": 50,
+      "false_positives": 10,
+      "false_negatives": 12,
+      "true_negatives": 128,
+      "precision": 0.8333333333333334,
+      "recall": 0.8064516129032258,
+      "accuracy": 0.89,
+      "f1": 0.819672131147541
+    },
+    "ai_assisted": {
+      "true_positives": 62,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "true_negatives": 138,
+      "precision": 1.0,
+      "recall": 1.0,
+      "accuracy": 1.0,
+      "f1": 1.0
+    },
+    "timing": {
+      "traditional_twenty_fixture_provisioning_and_verification_seconds": 10.550277076999919,
+      "ai_sum_successful_hr_request_seconds": 29.13381271400044,
+      "ai_request_seconds_mean": 1.456690635700022,
+      "ai_request_seconds_median": 1.457228761999886,
+      "ai_recommendation_seconds_total": 21.323755014000426,
+      "boundary": "Single local runs; successful request latency includes recommendation and target verification, excludes approval waiting and failed attempts. Some requests resumed corrected integration failures or outage recovery. Boundaries differ; no speedup claimed."
+    },
+    "review_effort": {
+      "separate_reviewer_decisions_tested": 3,
+      "approved": 2,
+      "rejected": 1,
+      "requester_decision_attempts_denied": 3,
+      "baseline_recommendation_discrepancies": 22,
+      "ai_recommendation_discrepancies": 0,
+      "human_review_minutes": "Not measured; reviewer actions were automated test scenarios, not human decisions."
+    },
+    "authorization": {
+      "final_valid_hires": 20,
+      "actual_AD_accounts": 20,
+      "actual_Keycloak_accounts": 20,
+      "excess_final_grants": 0,
+      "baseline_excessive_recommendations": 10,
+      "baseline_excess_grants_after_policy": 0,
+      "ai_excessive_recommendations": 0,
+      "frozen_expected_sha256": "7b2aeb151b121410f2a5d18fedb109929014f4f580d793c86164fe673777105c"
+    },
+    "limits": [
+      "Controlled synthetic categorical peer workload; exact peer categories are intentionally present.",
+      "Conventional baseline is deliberately coarse department RBAC; this does not show superiority over well-maintained fine-grained RBAC.",
+      "Small LLM explanations can be generic or truncated and have no grant/approval authority.",
+      "Historical integration and authorization defects were corrected; final acceptance does not erase failed evidence.",
+      "Single guest/container deployment with development-mode Keycloak is a lab, not production HA/hardening."
+    ]
+  },
+  "provenance": "Selected fields from retained real target, authentication, approval, denial, recovery and measurement reports. Original identifiers/configuration excluded. No lab rerun for publication."
+}

@@ -15,3 +15,5 @@ This portfolio shows the architecture, problems solved, and verified outcomes be
 <a href="projects/day-02/README.md"><img src="assets/hybrid-identity-portrait-v2.svg" alt="Hybrid identity lab architecture" width="760"></a>
 
 <a href="projects/day-03/README.md"><img src="assets/day-03-card.svg" alt="Jenkins SAML sign-in architecture" width="760"></a>
+
+<a href="projects/day-04/README.md"><img src="assets/day-04-card.svg" alt="AI-assisted employee onboarding architecture" width="760"></a>
