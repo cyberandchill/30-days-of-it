@@ -55,7 +55,7 @@ def card(p):
     if p['status'] == 'verified':
         asset = card_asset(p)
         return (f'<a href="{prefix}/README.md"><img src="{asset}" '
-                f'alt="{esc(p.get("gallery_alt", {1: "Active Directory lab architecture", 2: "Hybrid identity lab architecture"}.get(day, p["title"]+" architecture card")))}" width="760"></a>')
+                f'alt="{esc(p.get("gallery_alt", {1: "Active Directory lab architecture", 2: "Hybrid identity lab architecture"}.get(day, p["title"]+" architecture card")))}" width="360"></a>')
     return ''
 
 def bullets(items, empty):
@@ -63,20 +63,47 @@ def bullets(items, empty):
 
 def outputs(projects):
     featured = [p for p in projects if p['status'] == 'verified']
-    gallery = '\n\n'.join(card(p) for p in featured) or '_No verified projects yet._'
-    readme = f'''# CyberAndChill | Technical Portfolio
+    # GitHub-native two-column gallery. Each card remains linked to the project's evidence.
+    cards = [card(p) for p in featured]
+    gallery = '\n'.join(
+        '| ' + ' | '.join(cards[i:i+2] + [''] * (2-len(cards[i:i+2]))) + ' |'
+        for i in range(0, len(cards), 2)
+    ) if cards else '_No verified projects yet._'
+    if cards:
+        gallery = '| Featured build | Featured build |\n|:---:|:---:|\n' + gallery
+    readme = f'''<div align="center">
 
-**Identity Engineering · IT Infrastructure · Security**
+# CyberAndChill
 
-I build and validate practical IT environments that demonstrate how enterprise technology works—from directory services and workstation management to hybrid identity.
+### Identity Engineering · Infrastructure · Security
 
-This portfolio shows the architecture, problems solved, and verified outcomes behind each project. Open a project to explore its results, screenshots, and a step-by-step manual walkthrough.
+**Enterprise IT projects, built and validated.**
 
-**Connect:** [X / Twitter](https://x.com/cyberandchill) · [Website](https://cyberandchill.com) · [GitHub](https://github.com/cyberandchill) · [Email](mailto:cyberandchill@gmail.com)
+A curated portfolio of identity and security systems, with the architecture, test evidence and documentation behind each build.
+
+[Explore projects](#selected-projects) · [How the portfolio works](#behind-each-project) · [X](https://x.com/cyberandchill) · [Website](https://cyberandchill.com)
+
+</div>
+
+---
 
 ## Selected projects
 
+Each architecture card opens a project with a technical summary, a reproducible guide and supporting evidence.
+
 {gallery}
+
+## Behind each project
+
+| Architecture | Implementation | Evidence |
+|:---|:---|:---|
+| A clear picture of the systems and identity flow | What was configured and why it matters | Screenshots, tests, results and troubleshooting notes |
+
+**Open a card** to explore the project. Implementation guides are linked from each project page. All evidence reflects recorded lab work; nothing here is a claim about a live production environment.
+
+---
+
+<sub>CyberAndChill · [Technical portfolio guide](docs/START-HERE.md) · [GitHub](https://github.com/cyberandchill)</sub>
 '''
     result = {ROOT/'README.md': readme}
     for p in projects:
