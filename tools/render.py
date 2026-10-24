@@ -65,12 +65,12 @@ def outputs(projects):
     featured = [p for p in projects if p['status'] == 'verified']
     # GitHub-native two-column gallery. Each card remains linked to the project's evidence.
     cards = [card(p) for p in featured]
-    gallery = '\\n'.join(
+    gallery = '\n'.join(
         '| ' + ' | '.join(cards[i:i+2] + [''] * (2-len(cards[i:i+2]))) + ' |'
         for i in range(0, len(cards), 2)
     ) if cards else '_No verified projects yet._'
     if cards:
-        gallery = '| Featured build | Featured build |\\n|:---:|:---:|\\n' + gallery
+        gallery = '| Featured build | Featured build |\n|:---:|:---:|\n' + gallery
     readme = f'''<div align="center">
 
 # CyberAndChill
